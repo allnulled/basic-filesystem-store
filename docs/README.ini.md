@@ -1,10 +1,10 @@
-# filesystem-store
+# universal-filesystem-store
 
 Basic filesystem store interface and implementation.
 
 ## Install
 
-`$ npm i -s filesystem-store`
+`$ npm i -s universal-filesystem-store`
 
 ## Why?
 
