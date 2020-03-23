@@ -118,7 +118,7 @@ The current API supports this set of methods:
 **Description**:  method that generates a new store.
 
 
-**Parameter**:  `options={}:Object` - options that can overwrite properties and methods of the created store.
+**Parameter**:   - `options={}:Object` - options that can overwrite properties and methods of the created store.
 
 
 **Returns**:  `Store` - a new store.
@@ -147,7 +147,7 @@ The current API supports this set of methods:
 **Returns**:  `Promise`
 
 
-**Throws**:  when folder cannot be ensured.
+**Throws**:   - when folder cannot be ensured.
 
 
 
@@ -167,13 +167,13 @@ The current API supports this set of methods:
 **Description**:  returns the full path from an identifier of the node in the store.
 
 
-**Parameter**:  `node:String` - node identifier, or subpath. Must be inside the folder.
+**Parameter**:   - `node:String` - node identifier, or subpath. Must be inside the folder.
 
 
 **Returns**:  `filepath:String | Error` - full path of the file, or an object error. Must be checked once returned.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
 
@@ -193,16 +193,16 @@ The current API supports this set of methods:
 **Description**:  returns a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object.
 
 
-**Parameter**:  `node:String` - node to describe.
+**Parameter**:   - `node:String` - node to describe.
 
 
 **Returns**:  `Promise&lt;stats:Object&gt;` a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object of the node.
 
 
-**Throws**:  when no node is found.
+**Throws**:   - when no node is found.
 
 
- when node is out of bounds.
+  - when node is out of bounds.
 
 
 
@@ -222,13 +222,13 @@ The current API supports this set of methods:
 **Description**:  checks if a node exists in the store
 
 
-**Parameter**:  `node:String` - node suposed to exist.
+**Parameter**:   - `node:String` - node suposed to exist.
 
 
 **Returns**:  `Promise&lt;hasNode:Boolean&gt;` - result of the check.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
 
@@ -248,13 +248,13 @@ The current API supports this set of methods:
 **Description**:  checks if a node exists in the store as a file
 
 
-**Parameter**:  `node:String` - node suposed to be a file or not.
+**Parameter**:   - `node:String` - node suposed to be a file or not.
 
 
 **Returns**:  `Promise&lt;hasFile:Boolean&gt;` - result of the check.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
 
@@ -274,13 +274,13 @@ The current API supports this set of methods:
 **Description**:  check if a node exists in the store as a folder
 
 
-**Parameter**:  `node:String` - node suposed to be a folder or not.
+**Parameter**:   - `node:String` - node suposed to be a folder or not.
 
 
 **Returns**:  `Promise&lt;hasFolder:Boolean&gt;` - result of the check.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
 
@@ -300,19 +300,19 @@ The current API supports this set of methods:
 **Description**:  reads a file and returns its contents.
 
 
-**Parameter**:  `node:String` - node to be read as file.
+**Parameter**:   - `node:String` - node to be read as file.
 
 
- `options:Object` - options of the file reading.
+  - `options:Object` - options of the file reading.
 
 
 **Returns**:  `Promise&lt;contents:String&gt;` - the contents of the file.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
- when file cannot be read.
+  - when file cannot be read.
 
 
 
@@ -332,16 +332,16 @@ The current API supports this set of methods:
 **Description**:  reads a folder and returns its contents (files and folders).
 
 
-**Parameter**:  `node:String` - node to be read as folder.
+**Parameter**:   - `node:String` - node to be read as folder.
 
 
 **Returns**:  `Promise&lt;nodes:Array&lt;String&gt;&gth;` - nodes inside the folder.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
- when folder cannot be read.
+  - when folder cannot be read.
 
 
 
@@ -361,22 +361,22 @@ The current API supports this set of methods:
 **Description**:  writes contents to a file based in some options.
 
 
-**Parameter**:  `node:String` - node to be written as file.
+**Parameter**:   - `node:String` - node to be written as file.
 
 
- `contents:String|Buffer` - contents to be written.
+  - `contents:String|Buffer` - contents to be written.
 
 
- `options:String|Object` - options of the writing.
+  - `options:String|Object` - options of the writing.
 
 
 **Returns**:  `Promise&lt;filepath:String&gt;` - node overwritten.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
- when file cannot be written.
+  - when file cannot be written.
 
 
 
@@ -396,19 +396,19 @@ The current API supports this set of methods:
 **Description**:  creates a folder.
 
 
-**Parameter**:  `node:String` - node to create as folder.
+**Parameter**:   - `node:String` - node to create as folder.
 
 
- `options:Object` - options of the creation.
+  - `options:Object` - options of the creation.
 
 
 **Returns**:  `filepath:String` - node created.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
- when folder cannot be created.
+  - when folder cannot be created.
 
 
 
@@ -428,25 +428,25 @@ The current API supports this set of methods:
 **Description**:  if a file exists (1), it updates its content. Otherwise, it fails.
 
 
-**Parameter**:  `node:String` - node to be updated.
+**Parameter**:   - `node:String` - node to be updated.
 
 
- `contents:String|Buffer` - contents to write.
+  - `contents:String|Buffer` - contents to write.
 
 
- `options:String|Object` - options of the writing.
+  - `options:String|Object` - options of the writing.
 
 
 **Returns**:  `Promise`
 
 
-**Throws**:  when node is not a file.
+**Throws**:   - when node is not a file.
 
 
- when node is out of bounds.
+  - when node is out of bounds.
 
 
- when file cannot be written.
+  - when file cannot be written.
 
 
 
@@ -466,16 +466,16 @@ The current API supports this set of methods:
 **Description**:  deletes a node as file.
 
 
-**Parameter**:  `node:String` - node to be deleted as file.
+**Parameter**:   - `node:String` - node to be deleted as file.
 
 
 **Returns**:  `filepath:String` - node deleted.
 
 
-**Throws**:  when the node is out of bounds.
+**Throws**:   - when the node is out of bounds.
 
 
- when the file cannot be deleted.
+  - when the file cannot be deleted.
 
 
 
@@ -495,19 +495,19 @@ The current API supports this set of methods:
 **Description**:  deletes a node as folder
 
 
-**Parameter**:  `node:String` - node to delete as folder
+**Parameter**:   - `node:String` - node to delete as folder
 
 
- `options:Object` - options of the deletion
+  - `options:Object` - options of the deletion
 
 
 **Returns**:  `Promise&lt;folder:String&gt;` - folder to delete.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
- when folder cannot be deleted.
+  - when folder cannot be deleted.
 
 
 
@@ -527,16 +527,16 @@ The current API supports this set of methods:
 **Description**:  ensures that a file exists or creates it.
 
 
-**Parameter**:  `node:String` - file to be ensured.
+**Parameter**:   - `node:String` - file to be ensured.
 
 
 **Returns**:  `Promise&lt;String&gt;` - the file ensured.
 
 
-**Throws**:  when the node is out of bounds.
+**Throws**:   - when the node is out of bounds.
 
 
- when the file cannot be ensured.
+  - when the file cannot be ensured.
 
 
 
@@ -556,16 +556,16 @@ The current API supports this set of methods:
 **Description**:  ensures that a folder exists or creates it.
 
 
-**Parameter**:  `node:String` - folder to be ensured.
+**Parameter**:   - `node:String` - folder to be ensured.
 
 
 **Returns**:  `Promise&lt;String&gt;` - the folder ensured.
 
 
-**Throws**:  when the node is out of bounds.
+**Throws**:   - when the node is out of bounds.
 
 
- when the folder cannot be ensured.
+  - when the folder cannot be ensured.
 
 
 
@@ -585,19 +585,19 @@ The current API supports this set of methods:
 **Description**:  renames or moves a node.
 
 
-**Parameter**:  `oldNode:String` - node source.
+**Parameter**:   - `oldNode:String` - node source.
 
 
- `newNode:String` - node destination.
+  - `newNode:String` - node destination.
 
 
 **Returns**:  `Promise&lt;nodeDestination:String&gt;` - node destination.
 
 
-**Throws**:  when node cannot be renamed.
+**Throws**:   - when node cannot be renamed.
 
 
- when a node is out of bounds.
+  - when a node is out of bounds.
 
 
 
@@ -617,16 +617,16 @@ The current API supports this set of methods:
 **Description**:  creates a node readable stream
 
 
-**Parameter**:  `node:String` - node to create the stream from.
+**Parameter**:   - `node:String` - node to create the stream from.
 
 
 **Returns**:  `readable:Stream` - readable stream of the node.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
- when stream cannot be created.
+  - when stream cannot be created.
 
 
 
@@ -646,16 +646,16 @@ The current API supports this set of methods:
 **Description**:  creates a node writable stream
 
 
-**Parameter**:  `node:String` - node to create the stream from.
+**Parameter**:   - `node:String` - node to create the stream from.
 
 
 **Returns**:  `writable:Stream` - writable stream of the node.
 
 
-**Throws**:  when node is out of bounds.
+**Throws**:   - when node is out of bounds.
 
 
- when stream cannot be created.
+  - when stream cannot be created.
 
 
 
@@ -675,16 +675,16 @@ The current API supports this set of methods:
 **Description**:  creates multiple files with one operation.
 
 
-**Parameter**:  `nodes:Object&lt;String&gt;` - map `{ &lt;filename&gt;:&lt;filecontents&gt; }` of files to create.
+**Parameter**:   - `nodes:Object&lt;String&gt;` - map `{ &lt;filename&gt;:&lt;filecontents&gt; }` of files to create.
 
 
 **Returns**:  `Promise`
 
 
-**Throws**:  when a node is out of bounds.
+**Throws**:   - when a node is out of bounds.
 
 
- when some file cannot be created.
+  - when some file cannot be created.
 
 
 
@@ -704,16 +704,16 @@ The current API supports this set of methods:
 **Description**:  deletes multiple files with one operation.
 
 
-**Parameter**:  `nodes:Array&lt;String&gt;` - list of files to delete.
+**Parameter**:   - `nodes:Array&lt;String&gt;` - list of files to delete.
 
 
 **Returns**:  `Promise`
 
 
-**Throws**:  when a node is out of bounds.
+**Throws**:   - when a node is out of bounds.
 
 
- when some file cannot be deleted.
+  - when some file cannot be deleted.
 
 
 
@@ -733,16 +733,16 @@ The current API supports this set of methods:
 **Description**:  creates multiple folders with one operation.
 
 
-**Parameter**:  `nodes:Array&lt;String&gt;` - list of folders to create.
+**Parameter**:   - `nodes:Array&lt;String&gt;` - list of folders to create.
 
 
 **Returns**:  `Promise`
 
 
-**Throws**:  when a node is out of bounds.
+**Throws**:   - when a node is out of bounds.
 
 
- when some folder cannot be created.
+  - when some folder cannot be created.
 
 
 
@@ -762,16 +762,16 @@ The current API supports this set of methods:
 **Description**:  deletes multiple folders with one operation.
 
 
-**Parameter**:  `nodes:Array&lt;String&gt;` - list of folders to delete.
+**Parameter**:   - `nodes:Array&lt;String&gt;` - list of folders to delete.
 
 
 **Returns**:  `Promise`
 
 
-**Throws**:  when a node is out of bounds.
+**Throws**:   - when a node is out of bounds.
 
 
- when some folder cannot be deleted.
+  - when some folder cannot be deleted.
 
 
 
@@ -791,16 +791,16 @@ The current API supports this set of methods:
 **Description**:  ensures that some files exist or creates them.
 
 
-**Parameter**:  `node:Array&lt;String&gt;` - files to be ensured.
+**Parameter**:   - `node:Array&lt;String&gt;` - files to be ensured.
 
 
 **Returns**:  `Promise&lt;Array&lt;String&gt;&gth;` - the files ensured.
 
 
-**Throws**:  when a node is out of bounds.
+**Throws**:   - when a node is out of bounds.
 
 
- when the files cannot be ensured.
+  - when the files cannot be ensured.
 
 
 
@@ -820,16 +820,16 @@ The current API supports this set of methods:
 **Description**:  ensures that some folders exist or creates them.
 
 
-**Parameter**:  `node:String` - folders to be ensured.
+**Parameter**:   - `node:String` - folders to be ensured.
 
 
 **Returns**:  `Promise&lt;String&gt;` - the folders ensured.
 
 
-**Throws**:  when a node is out of bounds.
+**Throws**:   - when a node is out of bounds.
 
 
- when the folders cannot be ensured.
+  - when the folders cannot be ensured.
 
 
 
@@ -849,16 +849,16 @@ The current API supports this set of methods:
 **Description**:  deletes a node (file or folder) and all its subnodes.
 
 
-**Parameter**:  `node:String` - node to delete recursively.
+**Parameter**:   - `node:String` - node to delete recursively.
 
 
 **Returns**:  `Promise&lt;String&gt;` - the node to delete recursively.
 
 
-**Throws**:  when the node is out of bounds.
+**Throws**:   - when the node is out of bounds.
 
 
- when the node cannot be deleted recursively.
+  - when the node cannot be deleted recursively.
 
 
 
@@ -878,16 +878,16 @@ The current API supports this set of methods:
 **Description**:  finds nodes by [glob patterns](https://www.npmjs.com/package/glob#glob-primer).
 
 
-**Parameter**:  `patterns:String|Array&lt;String&gt;` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
+**Parameter**:   - `patterns:String|Array&lt;String&gt;` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
 
 
 **Returns**:  `Promise&lt;Array&lt;String&gt;&gth;` - the nodes matched.
 
 
-**Throws**:  when a node is out of bounds.
+**Throws**:   - when a node is out of bounds.
 
 
- when the search produces some error.
+  - when the search produces some error.
 
 
 

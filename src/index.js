@@ -48,7 +48,7 @@ class Store {
 	 * 
 	 * @constructor
 	 * @description method that generates a new store.
-	 * @parameter `options={}:Object` - options that can overwrite properties and methods of the created store.
+	 * @parameter  - `options={}:Object` - options that can overwrite properties and methods of the created store.
 	 * @returns `Store` - a new store.
 	 * 
 	 */
@@ -67,7 +67,7 @@ class Store {
 	 * @description ensures the existence of `basedir` folder.
 	 * @asynchronous
 	 * @returns `Promise`
-	 * @throws when folder cannot be ensured.
+	 * @throws  - when folder cannot be ensured.
 	 * 
 	 */
 	initialize() {
@@ -89,9 +89,9 @@ class Store {
 	 * @method
 	 * @synchronous
 	 * @description returns the full path from an identifier of the node in the store.
-	 * @parameter `node:String` - node identifier, or subpath. Must be inside the folder.
+	 * @parameter  - `node:String` - node identifier, or subpath. Must be inside the folder.
 	 * @returns `filepath:String | Error` - full path of the file, or an object error. Must be checked once returned.
-	 * @throws when node is out of bounds.
+	 * @throws  - when node is out of bounds.
 	 * 
 	 */
 	getPath(node) {
@@ -111,10 +111,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description returns a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object.
-	 * @parameter `node:String` - node to describe.
+	 * @parameter  - `node:String` - node to describe.
 	 * @returns `Promise&lt;stats:Object&gt;` a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object of the node.
-	 * @throws when no node is found.
-	 * @throws when node is out of bounds.
+	 * @throws  - when no node is found.
+	 * @throws  - when node is out of bounds.
 	 * 
 	 */
 	describe(node) {
@@ -138,9 +138,9 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description checks if a node exists in the store
-	 * @parameter `node:String` - node suposed to exist.
+	 * @parameter  - `node:String` - node suposed to exist.
 	 * @returns `Promise&lt;hasNode:Boolean&gt;` - result of the check.
-	 * @throws when node is out of bounds.
+	 * @throws  - when node is out of bounds.
 	 * 
 	 */
 	has(node) {
@@ -164,9 +164,9 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description checks if a node exists in the store as a file
-	 * @parameter `node:String` - node suposed to be a file or not.
+	 * @parameter  - `node:String` - node suposed to be a file or not.
 	 * @returns `Promise&lt;hasFile:Boolean&gt;` - result of the check.
-	 * @throws when node is out of bounds.
+	 * @throws  - when node is out of bounds.
 	 * 
 	 */
 	hasFile(node) {
@@ -193,9 +193,9 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description check if a node exists in the store as a folder
-	 * @parameter `node:String` - node suposed to be a folder or not.
+	 * @parameter  - `node:String` - node suposed to be a folder or not.
 	 * @returns `Promise&lt;hasFolder:Boolean&gt;` - result of the check.
-	 * @throws when node is out of bounds.
+	 * @throws  - when node is out of bounds.
 	 * 
 	 */
 	hasFolder(node) {
@@ -222,11 +222,11 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description reads a file and returns its contents.
-	 * @parameter `node:String` - node to be read as file.
-	 * @parameter `options:Object` - options of the file reading.
+	 * @parameter  - `node:String` - node to be read as file.
+	 * @parameter  - `options:Object` - options of the file reading.
 	 * @returns `Promise&lt;contents:String&gt;` - the contents of the file.
-	 * @throws when node is out of bounds.
-	 * @throws when file cannot be read.
+	 * @throws  - when node is out of bounds.
+	 * @throws  - when file cannot be read.
 	 * 
 	 */
 	readFile(node, options = "utf8") {
@@ -253,10 +253,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description reads a folder and returns its contents (files and folders).
-	 * @parameter `node:String` - node to be read as folder.
+	 * @parameter  - `node:String` - node to be read as folder.
 	 * @returns `Promise&lt;nodes:Array&lt;String&gt;&gth;` - nodes inside the folder.
-	 * @throws when node is out of bounds.
-	 * @throws when folder cannot be read.
+	 * @throws  - when node is out of bounds.
+	 * @throws  - when folder cannot be read.
 	 * 
 	 */
 	readFolder(node) {
@@ -283,12 +283,12 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description writes contents to a file based in some options.
-	 * @parameter `node:String` - node to be written as file.
-	 * @parameter `contents:String|Buffer` - contents to be written.
-	 * @parameter `options:String|Object` - options of the writing.
+	 * @parameter  - `node:String` - node to be written as file.
+	 * @parameter  - `contents:String|Buffer` - contents to be written.
+	 * @parameter  - `options:String|Object` - options of the writing.
 	 * @returns `Promise&lt;filepath:String&gt;` - node overwritten.
-	 * @throws when node is out of bounds.
-	 * @throws when file cannot be written.
+	 * @throws  - when node is out of bounds.
+	 * @throws  - when file cannot be written.
 	 * 
 	 */
 	writeFile(node, contents, options = "utf8") {
@@ -315,11 +315,11 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description creates a folder.
-	 * @parameter `node:String` - node to create as folder.
-	 * @parameter `options:Object` - options of the creation.
+	 * @parameter  - `node:String` - node to create as folder.
+	 * @parameter  - `options:Object` - options of the creation.
 	 * @returns `filepath:String` - node created.
-	 * @throws when node is out of bounds.
-	 * @throws when folder cannot be created.
+	 * @throws  - when node is out of bounds.
+	 * @throws  - when folder cannot be created.
 	 * 
 	 */
 	createFolder(node, options = {}) {
@@ -346,13 +346,13 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description if a file exists (1), it updates its content. Otherwise, it fails.
-	 * @parameter `node:String` - node to be updated.
-	 * @parameter `contents:String|Buffer` - contents to write.
-	 * @parameter `options:String|Object` - options of the writing.
+	 * @parameter  - `node:String` - node to be updated.
+	 * @parameter  - `contents:String|Buffer` - contents to write.
+	 * @parameter  - `options:String|Object` - options of the writing.
 	 * @returns `Promise`
-	 * @throws when node is not a file.
-	 * @throws when node is out of bounds.
-	 * @throws when file cannot be written.
+	 * @throws  - when node is not a file.
+	 * @throws  - when node is out of bounds.
+	 * @throws  - when file cannot be written.
 	 * 
 	 */
 	updateFile(node, contents, options = "utf8") {
@@ -372,10 +372,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description deletes a node as file.
-	 * @parameter `node:String` - node to be deleted as file.
+	 * @parameter  - `node:String` - node to be deleted as file.
 	 * @returns `filepath:String` - node deleted.
-	 * @throws when the node is out of bounds.
-	 * @throws when the file cannot be deleted.
+	 * @throws  - when the node is out of bounds.
+	 * @throws  - when the file cannot be deleted.
 	 * 
 	 */
 	deleteFile(node) {
@@ -402,11 +402,11 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description deletes a node as folder
-	 * @parameter `node:String` - node to delete as folder
-	 * @parameter `options:Object` - options of the deletion
+	 * @parameter  - `node:String` - node to delete as folder
+	 * @parameter  - `options:Object` - options of the deletion
 	 * @returns `Promise&lt;folder:String&gt;` - folder to delete.
-	 * @throws when node is out of bounds.
-	 * @throws when folder cannot be deleted.
+	 * @throws  - when node is out of bounds.
+	 * @throws  - when folder cannot be deleted.
 	 * 
 	 */
 	deleteFolder(node, options = {}) {
@@ -433,10 +433,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description ensures that a file exists or creates it.
-	 * @parameter `node:String` - file to be ensured.
+	 * @parameter  - `node:String` - file to be ensured.
 	 * @returns `Promise&lt;String&gt;` - the file ensured.
-	 * @throws when the node is out of bounds.
-	 * @throws when the file cannot be ensured.
+	 * @throws  - when the node is out of bounds.
+	 * @throws  - when the file cannot be ensured.
 	 * 
 	 */
 	ensureFile(node) {
@@ -458,10 +458,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description ensures that a folder exists or creates it.
-	 * @parameter `node:String` - folder to be ensured.
+	 * @parameter  - `node:String` - folder to be ensured.
 	 * @returns `Promise&lt;String&gt;` - the folder ensured.
-	 * @throws when the node is out of bounds.
-	 * @throws when the folder cannot be ensured.
+	 * @throws  - when the node is out of bounds.
+	 * @throws  - when the folder cannot be ensured.
 	 * 
 	 */
 	ensureFolder(node) {
@@ -483,11 +483,11 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description renames or moves a node.
-	 * @parameter `oldNode:String` - node source.
-	 * @parameter `newNode:String` - node destination.
+	 * @parameter  - `oldNode:String` - node source.
+	 * @parameter  - `newNode:String` - node destination.
 	 * @returns `Promise&lt;nodeDestination:String&gt;` - node destination.
-	 * @throws when node cannot be renamed.
-	 * @throws when a node is out of bounds.
+	 * @throws  - when node cannot be renamed.
+	 * @throws  - when a node is out of bounds.
 	 * 
 	 */
 	rename(oldNode, newNode) {
@@ -518,10 +518,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description creates a node readable stream
-	 * @parameter `node:String` - node to create the stream from.
+	 * @parameter  - `node:String` - node to create the stream from.
 	 * @returns `readable:Stream` - readable stream of the node.
-	 * @throws when node is out of bounds.
-	 * @throws when stream cannot be created.
+	 * @throws  - when node is out of bounds.
+	 * @throws  - when stream cannot be created.
 	 * 
 	 */
 	createReadStream(node) {
@@ -541,10 +541,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description creates a node writable stream
-	 * @parameter `node:String` - node to create the stream from.
+	 * @parameter  - `node:String` - node to create the stream from.
 	 * @returns `writable:Stream` - writable stream of the node.
-	 * @throws when node is out of bounds.
-	 * @throws when stream cannot be created.
+	 * @throws  - when node is out of bounds.
+	 * @throws  - when stream cannot be created.
 	 * 
 	 */
 	createWriteStream(node) {
@@ -564,10 +564,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description creates multiple files with one operation.
-	 * @parameter `nodes:Object&lt;String&gt;` - map `{ &lt;filename&gt;:&lt;filecontents&gt; }` of files to create.
+	 * @parameter  - `nodes:Object&lt;String&gt;` - map `{ &lt;filename&gt;:&lt;filecontents&gt; }` of files to create.
 	 * @returns `Promise`
-	 * @throws when a node is out of bounds.
-	 * @throws when some file cannot be created.
+	 * @throws  - when a node is out of bounds.
+	 * @throws  - when some file cannot be created.
 	 * 
 	 */
 	writeFiles(nodes) {
@@ -592,10 +592,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description deletes multiple files with one operation.
-	 * @parameter `nodes:Array&lt;String&gt;` - list of files to delete.
+	 * @parameter  - `nodes:Array&lt;String&gt;` - list of files to delete.
 	 * @returns `Promise`
-	 * @throws when a node is out of bounds.
-	 * @throws when some file cannot be deleted.
+	 * @throws  - when a node is out of bounds.
+	 * @throws  - when some file cannot be deleted.
 	 * 
 	 */
 	deleteFiles(nodes) {
@@ -615,10 +615,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description creates multiple folders with one operation.
-	 * @parameter `nodes:Array&lt;String&gt;` - list of folders to create.
+	 * @parameter  - `nodes:Array&lt;String&gt;` - list of folders to create.
 	 * @returns `Promise`
-	 * @throws when a node is out of bounds.
-	 * @throws when some folder cannot be created.
+	 * @throws  - when a node is out of bounds.
+	 * @throws  - when some folder cannot be created.
 	 * 
 	 */
 	createFolders(nodes) {
@@ -636,10 +636,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description deletes multiple folders with one operation.
-	 * @parameter `nodes:Array&lt;String&gt;` - list of folders to delete.
+	 * @parameter  - `nodes:Array&lt;String&gt;` - list of folders to delete.
 	 * @returns `Promise`
-	 * @throws when a node is out of bounds.
-	 * @throws when some folder cannot be deleted.
+	 * @throws  - when a node is out of bounds.
+	 * @throws  - when some folder cannot be deleted.
 	 * 
 	 */
 	deleteFolders(nodes) {
@@ -657,10 +657,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description ensures that some files exist or creates them.
-	 * @parameter `node:Array&lt;String&gt;` - files to be ensured.
+	 * @parameter  - `node:Array&lt;String&gt;` - files to be ensured.
 	 * @returns `Promise&lt;Array&lt;String&gt;&gth;` - the files ensured.
-	 * @throws when a node is out of bounds.
-	 * @throws when the files cannot be ensured.
+	 * @throws  - when a node is out of bounds.
+	 * @throws  - when the files cannot be ensured.
 	 * 
 	 */
 	ensureFiles(nodes) {
@@ -677,10 +677,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description ensures that some folders exist or creates them.
-	 * @parameter `node:String` - folders to be ensured.
+	 * @parameter  - `node:String` - folders to be ensured.
 	 * @returns `Promise&lt;String&gt;` - the folders ensured.
-	 * @throws when a node is out of bounds.
-	 * @throws when the folders cannot be ensured.
+	 * @throws  - when a node is out of bounds.
+	 * @throws  - when the folders cannot be ensured.
 	 * 
 	 */
 	ensureFolders(nodes) {
@@ -698,10 +698,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description deletes a node (file or folder) and all its subnodes.
-	 * @parameter `node:String` - node to delete recursively.
+	 * @parameter  - `node:String` - node to delete recursively.
 	 * @returns `Promise&lt;String&gt;` - the node to delete recursively.
-	 * @throws when the node is out of bounds.
-	 * @throws when the node cannot be deleted recursively.
+	 * @throws  - when the node is out of bounds.
+	 * @throws  - when the node cannot be deleted recursively.
 	 * 
 	 */
 	deleteRecursively(node, options = {}) {
@@ -725,10 +725,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description finds nodes by [glob patterns](https://www.npmjs.com/package/glob#glob-primer).
-	 * @parameter `patterns:String|Array&lt;String&gt;` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
+	 * @parameter  - `patterns:String|Array&lt;String&gt;` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
 	 * @returns `Promise&lt;Array&lt;String&gt;&gth;` - the nodes matched.
-	 * @throws when a node is out of bounds.
-	 * @throws when the search produces some error.
+	 * @throws  - when a node is out of bounds.
+	 * @throws  - when the search produces some error.
 	 * 
 	 */
 	findPatterns(patterns, options = {}) {
