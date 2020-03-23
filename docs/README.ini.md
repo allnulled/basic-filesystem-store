@@ -10,6 +10,10 @@ Basic filesystem store interface and implementation.
 
 To have a universal (promise-based) interface to interact with the filesystem.
 
+To have a universal secure interface to interact with the filesystem.
+
+    - all the files and folders manipulated from one store must be files and folders that live inside the store's base directory (`store.basedir`).
+
 ## Overview
 
 The current API supports this set of methods:

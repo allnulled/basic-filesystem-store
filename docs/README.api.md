@@ -3,7 +3,7 @@
 
 
 
-**Description**:  Creates a new store instance. Read about the constructor of the class for more info.
+**Description**:  creates a new store instance. Read about the constructor of the class for more info.
 
 
 
@@ -12,7 +12,7 @@
 
 
 
-**Description**:  Default values of options. Any property here can be overwritten from the constructor's options.
+**Description**:  default values of options. Any property here can be overwritten from the constructor's options.
 
 
 **Property**:  `basedir:String` - directory used as store.
@@ -25,7 +25,7 @@
 
 
 
-**Description**:  Method that generates a new store.
+**Description**:  method that generates a new store.
 
 
 **Parameter**:  `options={}:Object` - options that can overwrite properties and methods of the created store.
@@ -40,7 +40,7 @@
 
 
 
-**Description**:  Ensures the existence of `basedir` folder.
+**Description**:  ensures the existence of `basedir` folder.
 
 
 **Asynchronous**.
@@ -55,7 +55,7 @@
 
 
 
-**Description**:  Returns the full path from an identifier of the node in the store.
+**Description**:  returns the full path from an identifier of the node in the store.
 
 
 **Parameter**:  `node:String` - node identifier, or subpath. Must be inside the folder.
@@ -73,16 +73,13 @@
 
 
 
-**Description**:  
+**Description**:  returns a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object.
 
 
-**Parameter**:  
+**Parameter**:  `node:String`
 
 
-**Returns**:  
-
-
-**Throws**:  
+**Returns**:  asynchronously, a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object
 
 
 
@@ -91,16 +88,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -109,16 +106,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -127,16 +124,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -145,16 +142,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -163,16 +160,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -181,16 +178,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -199,16 +196,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -217,16 +214,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -235,16 +232,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -253,16 +250,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -271,16 +268,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -289,16 +286,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -307,16 +304,16 @@
 
 
 
-**Description**:  
+**Description**:  @TODO
 
 
-**Parameter**:  
+**Parameter**:  @TODO
 
 
-**Returns**:  
+**Returns**:  @TODO
 
 
-**Throws**:  
+**Throws**:  @TODO
 
 
 
@@ -325,7 +322,7 @@
 
 
 
-**Description**:  Creates multiple files with one operation.
+**Description**:  creates multiple files with one operation.
 
 
 **Parameter**:  `nodes:Object<String>` - map `{ <filename>:<filecontents> }` of files to create.
@@ -343,7 +340,7 @@
 
 
 
-**Description**:  Deletes multiple files with one operation.
+**Description**:  deletes multiple files with one operation.
 
 
 **Parameter**:  `nodes:Array<String>` - list of files to delete.
@@ -361,7 +358,7 @@
 
 
 
-**Description**:  Creates multiple folders with one operation.
+**Description**:  creates multiple folders with one operation.
 
 
 **Parameter**:  `nodes:Array<String>` - list of folders to create.
@@ -379,7 +376,7 @@
 
 
 
-**Description**:  Deletes multiple folders with one operation.
+**Description**:  deletes multiple folders with one operation.
 
 
 **Parameter**:  `nodes:Array<String>` - list of folders to delete.
@@ -397,7 +394,7 @@
 
 
 
-**Description**:  Ensures that a file exists or creates it.
+**Description**:  ensures that a file exists or creates it.
 
 
 **Parameter**:  `node:String` - file to be ensured.
@@ -415,7 +412,7 @@
 
 
 
-**Description**:  Ensures that some files exist or creates them.
+**Description**:  ensures that some files exist or creates them.
 
 
 **Parameter**:  `node:Array<String>` - files to be ensured.
@@ -433,7 +430,7 @@
 
 
 
-**Description**:  Ensures that a folder exists or creates it.
+**Description**:  ensures that a folder exists or creates it.
 
 
 **Parameter**:  `node:String` - folder to be ensured.
@@ -451,7 +448,7 @@
 
 
 
-**Description**:  Ensures that some folders exist or creates them.
+**Description**:  ensures that some folders exist or creates them.
 
 
 **Parameter**:  `node:String` - folders to be ensured.
@@ -469,7 +466,7 @@
 
 
 
-**Description**:  Deletes a node (file or folder) and all its subnodes.
+**Description**:  deletes a node (file or folder) and all its subnodes.
 
 
 **Parameter**:  `node:String` - node to delete recursively.
@@ -487,7 +484,7 @@
 
 
 
-**Description**:  Finds nodes by [glob patterns](https://www.npmjs.com/package/glob#glob-primer).
+**Description**:  finds nodes by [glob patterns](https://www.npmjs.com/package/glob#glob-primer).
 
 
 **Parameter**:  `patterns:String|Array<String>` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.

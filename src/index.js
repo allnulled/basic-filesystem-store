@@ -11,7 +11,7 @@ class Store {
 	 * 
 	 * ### `Store.create(...args):Store`
 	 * 
-	 * @description Creates a new store instance. Read about the constructor of the class for more info.
+	 * @description creates a new store instance. Read about the constructor of the class for more info.
 	 * 
 	 */
 	static create(...args) {
@@ -22,7 +22,7 @@ class Store {
 	 * 
 	 * ### `Store.DEFAULT_OPTIONS:Object`
 	 * 
-	 * @description Default values of options. Any property here can be overwritten from the constructor's options.
+	 * @description default values of options. Any property here can be overwritten from the constructor's options.
 	 * @property `basedir:String` - directory used as store.
 	 *    - defaults to `process.cwd() + "/_files_"`
 	 * 
@@ -37,7 +37,7 @@ class Store {
 	 * 
 	 * ### `Store.constructor(options={}:Object):Store`
 	 * 
-	 * @description Method that generates a new store.
+	 * @description method that generates a new store.
 	 * @parameter `options={}:Object` - options that can overwrite properties and methods of the created store.
 	 * @returns `Store` - a new store.
 	 * 
@@ -50,7 +50,7 @@ class Store {
 	 * 
 	 * ### `Store#initialize():Promise`
 	 * 
-	 * @description Ensures the existence of `basedir` folder.
+	 * @description ensures the existence of `basedir` folder.
 	 * @asynchronous
 	 * @returns `Promise`
 	 * 
@@ -69,7 +69,7 @@ class Store {
 	 * 
 	 * ### `Store#getPath(node:String):String`
 	 * 
-	 * @description Returns the full path from an identifier of the node in the store.
+	 * @description returns the full path from an identifier of the node in the store.
 	 * @parameter `node:String` - node identifier, or subpath. Must be inside the folder.
 	 * @returns `String | Error` 
 	 * @throws `new Error("PathOutOfScopeError")` - error indicating that the path is out of the scope of the store. This error is not thrown, but returned.
@@ -87,10 +87,9 @@ class Store {
 	 * 
 	 * ### `Store#describe(node:String):Promise<Object>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description returns a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object.
+	 * @parameter `node:String`
+	 * @returns asynchronously, a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object
 	 * 
 	 */
 	describe(node) {
@@ -109,10 +108,10 @@ class Store {
 	 * 
 	 * ### `Store#has(node:String):Promise<Boolean>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	has(node) {
@@ -131,10 +130,10 @@ class Store {
 	 * 
 	 * ### `Store#hasFile(node:String):Promise<Boolean>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	hasFile(node) {
@@ -156,10 +155,10 @@ class Store {
 	 * 
 	 * ### `Store#hasFolder(node:String):Promise<Boolean>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	hasFolder(node) {
@@ -181,10 +180,10 @@ class Store {
 	 * 
 	 * ### `Store#readFile(node:String, options="utf8":String|Object):Promise<String>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	readFile(node, options = "utf8") {
@@ -206,10 +205,10 @@ class Store {
 	 * 
 	 * ### `Store#readFolder(node:String):Promise<String>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	readFolder(node) {
@@ -231,10 +230,10 @@ class Store {
 	 * 
 	 * ### `Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	writeFile(node, contents, options = "utf8") {
@@ -256,10 +255,10 @@ class Store {
 	 * 
 	 * ### `Store#createFolder(node:String, options={}:String|Object):Promise<String>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	createFolder(node, options = {}) {
@@ -281,10 +280,10 @@ class Store {
 	 * 
 	 * ### `Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	updateFile(node, contents, options = "utf8") {
@@ -299,10 +298,10 @@ class Store {
 	 * 
 	 * ### `Store#deleteFile(node:String):Promise<String>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	deleteFile(node) {
@@ -324,10 +323,10 @@ class Store {
 	 * 
 	 * ### `Store#deleteFolder(node:String, options={}:String|Object):Promise<String>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	deleteFolder(node, options = {}) {
@@ -349,10 +348,10 @@ class Store {
 	 * 
 	 * ### `Store#rename(oldNode:String, newNode:String):Promise<String>`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	rename(oldNode, newNode) {
@@ -378,10 +377,10 @@ class Store {
 	 * 
 	 * ### `Store#createReadStream(node:String):ReadStream`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	createReadStream(node) {
@@ -396,10 +395,10 @@ class Store {
 	 * 
 	 * ### `Store#createWriteStream(node:String):WriteStream`
 	 * 
-	 * @description 
-	 * @parameter 
-	 * @returns 
-	 * @throws 
+	 * @description @TODO
+	 * @parameter @TODO
+	 * @returns @TODO
+	 * @throws @TODO
 	 * 
 	 */
 	createWriteStream(node) {
@@ -414,7 +413,7 @@ class Store {
 	 * 
 	 * ### `Store#writeFiles(nodes:Object<String>):Promise<Array<String>>`
 	 * 
-	 * @description Creates multiple files with one operation.
+	 * @description creates multiple files with one operation.
 	 * @parameter `nodes:Object<String>` - map `{ <filename>:<filecontents> }` of files to create.
 	 * @returns `Promise<Array<String>>` - asynchronously, the list of files created.
 	 * @throws error when some file cannot be created.
@@ -437,7 +436,7 @@ class Store {
 	 * 
 	 * ### `Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>`
 	 * 
-	 * @description Deletes multiple files with one operation.
+	 * @description deletes multiple files with one operation.
 	 * @parameter `nodes:Array<String>` - list of files to delete.
 	 * @returns `Promise<Array<String>>` - asynchronously, the list of files deleted.
 	 * @throws error when some file cannot be deleted.
@@ -455,7 +454,7 @@ class Store {
 	 * 
 	 * ### `Store#createFolders(nodes:Array<String>):Promise<Array<String>>`
 	 * 
-	 * @description Creates multiple folders with one operation.
+	 * @description creates multiple folders with one operation.
 	 * @parameter `nodes:Array<String>` - list of folders to create.
 	 * @returns `Promise<Array<String>>` - asynchronously, the list of folders created.
 	 * @throws error when some folder cannot be created.
@@ -471,7 +470,7 @@ class Store {
 	 * 
 	 * ### `Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>`
 	 * 
-	 * @description Deletes multiple folders with one operation.
+	 * @description deletes multiple folders with one operation.
 	 * @parameter `nodes:Array<String>` - list of folders to delete.
 	 * @returns `Promise<Array<String>>` - asynchronously, the list of folders deleted.
 	 * @throws error when some folder cannot be deleted.
@@ -487,7 +486,7 @@ class Store {
 	 * 
 	 * ### `Store#ensureFile(node:String):Promise<String>`
 	 * 
-	 * @description Ensures that a file exists or creates it.
+	 * @description ensures that a file exists or creates it.
 	 * @parameter `node:String` - file to be ensured.
 	 * @returns `Promise<String>` - asynchronously, the file ensured.
 	 * @throws error when the file cannot be ensured.
@@ -507,7 +506,7 @@ class Store {
 	 * 
 	 * ### `Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>`
 	 * 
-	 * @description Ensures that some files exist or creates them.
+	 * @description ensures that some files exist or creates them.
 	 * @parameter `node:Array<String>` - files to be ensured.
 	 * @returns `Promise<Array<String>>` - asynchronously, the files ensured.
 	 * @throws error when the files cannot be ensured.
@@ -523,7 +522,7 @@ class Store {
 	 * 
 	 * ### `Store#ensureFolder(node:String):Promise<String>`
 	 * 
-	 * @description Ensures that a folder exists or creates it.
+	 * @description ensures that a folder exists or creates it.
 	 * @parameter `node:String` - folder to be ensured.
 	 * @returns `Promise<String>` - asynchronously, the folder ensured.
 	 * @throws error when the folder cannot be ensured.
@@ -542,7 +541,7 @@ class Store {
 	 * 
 	 * ### `Store#ensureFolders(nodes:Array<String>):Promise<Array<String>>`
 	 * 
-	 * @description Ensures that some folders exist or creates them.
+	 * @description ensures that some folders exist or creates them.
 	 * @parameter `node:String` - folders to be ensured.
 	 * @returns `Promise<String>` - asynchronously, the folders ensured.
 	 * @throws error when the folders cannot be ensured.
@@ -558,7 +557,7 @@ class Store {
 	 * 
 	 * ### `Store#deleteRecursively(node:String):Promise<String>`
 	 * 
-	 * @description Deletes a node (file or folder) and all its subnodes.
+	 * @description deletes a node (file or folder) and all its subnodes.
 	 * @parameter `node:String` - node to delete recursively.
 	 * @returns `Promise<String>` - asynchronously, the node deleted.
 	 * @throws error when the node cannot be deleted recursively.
@@ -580,7 +579,7 @@ class Store {
 	 * 
 	 * ### `Store#findPatterns(patterns:String|Array<String>):Promise<Array<String>>`
 	 * 
-	 * @description Finds nodes by [glob patterns](https://www.npmjs.com/package/glob#glob-primer).
+	 * @description finds nodes by [glob patterns](https://www.npmjs.com/package/glob#glob-primer).
 	 * @parameter `patterns:String|Array<String>` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
 	 * @returns `Promise<Array<String>>` - asynchronously, the nodes matched.
 	 * @throws error when the search produces some error.
