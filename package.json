@@ -1,5 +1,5 @@
 {
-  "name": "universal-filesystem-store",
+  "name": "basic-filesystem-store",
   "version": "0.0.4",
   "description": "Basic store for filesystem, based in promises.",
   "main": "src/index.js",
@@ -38,10 +38,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allnulled/universal-filesystem-store.git"
+    "url": "git+https://github.com/allnulled/basic-filesystem-store.git"
   },
   "bugs": {
-    "url": "https://github.com/allnulled/universal-filesystem-store/issues"
+    "url": "https://github.com/allnulled/basic-filesystem-store/issues"
   },
-  "homepage": "https://github.com/allnulled/universal-filesystem-store#readme"
+  "homepage": "https://github.com/allnulled/basic-filesystem-store#readme"
 }
