@@ -1,17 +1,24 @@
 {
   "name": "filesystem-store",
   "version": "0.0.1",
-  "description": "Basic store for filesystem",
+  "description": "Basic store for filesystem, based in promises.",
   "main": "src/index.js",
   "directories": {
+    "doc": "docs",
     "test": "test"
   },
   "scripts": {
+    "dev": "nodemon -w 'src/*.js' -w 'test/*.test.js' -x 'npm run test'",
     "docs": "javadoc -i src/*.js -o docs/README.api.md -f markdown && concat docs/README.ini.md docs/README.api.md docs/README.end.md -o README.md",
     "upload": "npm run docs && git add . && git commit && git push",
-    "test": "mocha test/*.test.js"
+    "test": "mocha --bail test/*.test.js --sort"
   },
-  "keywords": ["store","file","filesystem","promise"],
+  "keywords": [
+    "store",
+    "file",
+    "filesystem",
+    "promise"
+  ],
   "author": "allnulled",
   "license": "WTFPL",
   "devDependencies": {
@@ -25,6 +32,16 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "debug": "^4.1.1"
-  }
+    "debug": "^4.1.1",
+    "fs-extra": "^9.0.0",
+    "globby": "^11.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allnulled/filesystem-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/allnulled/filesystem-store/issues"
+  },
+  "homepage": "https://github.com/allnulled/filesystem-store#readme"
 }
