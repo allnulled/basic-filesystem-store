@@ -1,6 +1,6 @@
 {
   "name": "basic-filesystem-store",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Basic store for filesystem, based in promises.",
   "main": "src/index.js",
   "directories": {
