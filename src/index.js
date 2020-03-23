@@ -9,7 +9,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store.create(...args):Store`
+	 * ----
+	 * 
+	 * ### Store.create(...args):Store
 	 * 
 	 * @static-method
 	 * @synchronous
@@ -22,7 +24,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store.DEFAULT_OPTIONS:Object`
+	 * ----
+	 * 
+	 * ### Store.DEFAULT_OPTIONS:Object
 	 * 
 	 * @static-property
 	 * @description default values of options. Any property here can be overwritten from the constructor's options.
@@ -38,7 +42,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store.constructor(options={}:Object):Store`
+	 * ----
+	 * 
+	 * ### Store.constructor(options={}:Object):Store
 	 * 
 	 * @constructor
 	 * @description method that generates a new store.
@@ -52,7 +58,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#initialize():Promise`
+	 * ----
+	 * 
+	 * ### Store#initialize():Promise
 	 * 
 	 * @method
 	 * @asynchronous
@@ -74,7 +82,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#getPath(node:String):String`
+	 * ----
+	 * 
+	 * ### Store#getPath(node:String):String
 	 * 
 	 * @method
 	 * @synchronous
@@ -94,7 +104,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#describe(node:String):Promise<Object>`
+	 * ----
+	 * 
+	 * ### Store#describe(node:String):Promise<Object>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -119,7 +131,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#has(node:String):Promise<Boolean>`
+	 * ----
+	 * 
+	 * ### Store#has(node:String):Promise<Boolean>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -143,7 +157,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#hasFile(node:String):Promise<Boolean>`
+	 * ----
+	 * 
+	 * ### Store#hasFile(node:String):Promise<Boolean>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -170,7 +186,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#hasFolder(node:String):Promise<Boolean>`
+	 * ----
+	 * 
+	 * ### Store#hasFolder(node:String):Promise<Boolean>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -197,7 +215,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#readFile(node:String, options="utf8":String|Object):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#readFile(node:String, options="utf8":String|Object):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -226,7 +246,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#readFolder(node:String):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#readFolder(node:String):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -254,7 +276,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -284,7 +308,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#createFolder(node:String, options={}:String|Object):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#createFolder(node:String, options={}:String|Object):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -313,7 +339,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -337,7 +365,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#deleteFile(node:String):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#deleteFile(node:String):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -365,7 +395,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#deleteFolder(node:String, options={}:String|Object):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#deleteFolder(node:String, options={}:String|Object):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -392,7 +424,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#ensureFile(node:String):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#ensureFile(node:String):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -415,7 +449,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#ensureFolder(node:String):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#ensureFolder(node:String):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -438,7 +474,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#rename(oldNode:String, newNode:String):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#rename(oldNode:String, newNode:String):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -471,7 +509,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#createReadStream(node:String):ReadStream`
+	 * ----
+	 * 
+	 * ### Store#createReadStream(node:String):ReadStream
 	 * 
 	 * @method
 	 * @asynchronous
@@ -492,7 +532,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#createWriteStream(node:String):WriteStream`
+	 * ----
+	 * 
+	 * ### Store#createWriteStream(node:String):WriteStream
 	 * 
 	 * @method
 	 * @asynchronous
@@ -513,7 +555,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#writeFiles(nodes:Object<String>):Promise<Array<String>>`
+	 * ----
+	 * 
+	 * ### Store#writeFiles(nodes:Object<String>):Promise<Array<String>>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -539,7 +583,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>`
+	 * ----
+	 * 
+	 * ### Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -560,7 +606,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#createFolders(nodes:Array<String>):Promise<Array<String>>`
+	 * ----
+	 * 
+	 * ### Store#createFolders(nodes:Array<String>):Promise<Array<String>>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -579,7 +627,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>`
+	 * ----
+	 * 
+	 * ### Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -598,7 +648,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>`
+	 * ----
+	 * 
+	 * ### Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -616,7 +668,9 @@ class Store {
 	}
 	/**
 	 * 
-	 * ### `Store#ensureFolders(nodes:Array<String>):Promise<Array<String>>`
+	 * ----
+	 * 
+	 * ### Store#ensureFolders(nodes:Array<String>):Promise<Array<String>>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -635,7 +689,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#deleteRecursively(node:String):Promise<String>`
+	 * ----
+	 * 
+	 * ### Store#deleteRecursively(node:String):Promise<String>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -660,7 +716,9 @@ class Store {
 
 	/**
 	 * 
-	 * ### `Store#findPatterns(patterns:String|Array<String>):Promise<Array<String>>`
+	 * ----
+	 * 
+	 * ### Store#findPatterns(patterns:String|Array<String>):Promise<Array<String>>
 	 * 
 	 * @method
 	 * @asynchronous

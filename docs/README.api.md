@@ -1,5 +1,7 @@
 
-### `Store.create(...args):Store`
+----
+
+### Store.create(...args):Store
 
 
 
@@ -14,7 +16,9 @@
 
 
 
-### `Store.DEFAULT_OPTIONS:Object`
+----
+
+### Store.DEFAULT_OPTIONS:Object
 
 
 
@@ -30,7 +34,9 @@
 
 
 
-### `Store.constructor(options={}:Object):Store`
+----
+
+### Store.constructor(options={}:Object):Store
 
 
 
@@ -48,7 +54,9 @@
 
 
 
-### `Store#initialize():Promise`
+----
+
+### Store#initialize():Promise
 
 
 
@@ -72,7 +80,9 @@
 
 
 
-### `Store#getPath(node:String):String`
+----
+
+### Store#getPath(node:String):String
 
 
 
@@ -96,7 +106,9 @@
 
 
 
-### `Store#describe(node:String):Promise<Object>`
+----
+
+### Store#describe(node:String):Promise<Object>
 
 
 
@@ -123,7 +135,9 @@
 
 
 
-### `Store#has(node:String):Promise<Boolean>`
+----
+
+### Store#has(node:String):Promise<Boolean>
 
 
 
@@ -147,7 +161,9 @@
 
 
 
-### `Store#hasFile(node:String):Promise<Boolean>`
+----
+
+### Store#hasFile(node:String):Promise<Boolean>
 
 
 
@@ -171,7 +187,9 @@
 
 
 
-### `Store#hasFolder(node:String):Promise<Boolean>`
+----
+
+### Store#hasFolder(node:String):Promise<Boolean>
 
 
 
@@ -195,7 +213,9 @@
 
 
 
-### `Store#readFile(node:String, options="utf8":String|Object):Promise<String>`
+----
+
+### Store#readFile(node:String, options="utf8":String|Object):Promise<String>
 
 
 
@@ -225,7 +245,9 @@
 
 
 
-### `Store#readFolder(node:String):Promise<String>`
+----
+
+### Store#readFolder(node:String):Promise<String>
 
 
 
@@ -252,7 +274,9 @@
 
 
 
-### `Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>`
+----
+
+### Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>
 
 
 
@@ -285,7 +309,9 @@
 
 
 
-### `Store#createFolder(node:String, options={}:String|Object):Promise<String>`
+----
+
+### Store#createFolder(node:String, options={}:String|Object):Promise<String>
 
 
 
@@ -315,7 +341,9 @@
 
 
 
-### `Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>`
+----
+
+### Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>
 
 
 
@@ -351,7 +379,9 @@
 
 
 
-### `Store#deleteFile(node:String):Promise<String>`
+----
+
+### Store#deleteFile(node:String):Promise<String>
 
 
 
@@ -378,7 +408,9 @@
 
 
 
-### `Store#deleteFolder(node:String, options={}:String|Object):Promise<String>`
+----
+
+### Store#deleteFolder(node:String, options={}:String|Object):Promise<String>
 
 
 
@@ -402,7 +434,9 @@
 
 
 
-### `Store#ensureFile(node:String):Promise<String>`
+----
+
+### Store#ensureFile(node:String):Promise<String>
 
 
 
@@ -429,7 +463,9 @@
 
 
 
-### `Store#ensureFolder(node:String):Promise<String>`
+----
+
+### Store#ensureFolder(node:String):Promise<String>
 
 
 
@@ -456,7 +492,9 @@
 
 
 
-### `Store#rename(oldNode:String, newNode:String):Promise<String>`
+----
+
+### Store#rename(oldNode:String, newNode:String):Promise<String>
 
 
 
@@ -486,7 +524,9 @@
 
 
 
-### `Store#createReadStream(node:String):ReadStream`
+----
+
+### Store#createReadStream(node:String):ReadStream
 
 
 
@@ -513,7 +553,9 @@
 
 
 
-### `Store#createWriteStream(node:String):WriteStream`
+----
+
+### Store#createWriteStream(node:String):WriteStream
 
 
 
@@ -540,7 +582,9 @@
 
 
 
-### `Store#writeFiles(nodes:Object<String>):Promise<Array<String>>`
+----
+
+### Store#writeFiles(nodes:Object<String>):Promise<Array<String>>
 
 
 
@@ -567,7 +611,9 @@
 
 
 
-### `Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>`
+----
+
+### Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>
 
 
 
@@ -594,7 +640,9 @@
 
 
 
-### `Store#createFolders(nodes:Array<String>):Promise<Array<String>>`
+----
+
+### Store#createFolders(nodes:Array<String>):Promise<Array<String>>
 
 
 
@@ -621,7 +669,9 @@
 
 
 
-### `Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>`
+----
+
+### Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>
 
 
 
@@ -648,7 +698,9 @@
 
 
 
-### `Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>`
+----
+
+### Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>
 
 
 
@@ -675,7 +727,9 @@
 
 
 
-### `Store#ensureFolders(nodes:Array<String>):Promise<Array<String>>`
+----
+
+### Store#ensureFolders(nodes:Array<String>):Promise<Array<String>>
 
 
 
@@ -702,7 +756,9 @@
 
 
 
-### `Store#deleteRecursively(node:String):Promise<String>`
+----
+
+### Store#deleteRecursively(node:String):Promise<String>
 
 
 
@@ -729,7 +785,9 @@
 
 
 
-### `Store#findPatterns(patterns:String|Array<String>):Promise<Array<String>>`
+----
+
+### Store#findPatterns(patterns:String|Array<String>):Promise<Array<String>>
 
 
 
