@@ -48,6 +48,7 @@ class StoreInterface {
 	 * 
 	 * @constructor
 	 * @description method that generates a new store.
+	 * @parameter
 	 * @parameter  - `options={}:Object` - options that can overwrite properties and methods of the created store.
 	 * @returns `Store` - a new store.
 	 * 
@@ -205,14 +206,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#describe(node:String):Promise&lt;Object&gt;
+	 * ### Store#describe(node:String):Promise<code>&lt;</code>Object<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description returns a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object.
 	 * @parameter
 	 * @parameter  - `node:String` - node to describe.
-	 * @returns `Promise&lt;stats:Object&gt;` a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object of the node.
+	 * @returns `Promise<code>&lt;</code>stats:Object<code>&gt;</code>` a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object of the node.
 	 * @throws
 	 * @throws  - when no node is found.
 	 * @throws  - when node is out of bounds.
@@ -234,14 +235,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#has(node:String):Promise&lt;Boolean&gt;
+	 * ### Store#has(node:String):Promise<code>&lt;</code>Boolean<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description checks if a node exists in the store
 	 * @parameter
 	 * @parameter  - `node:String` - node suposed to exist.
-	 * @returns `Promise&lt;hasNode:Boolean&gt;` - result of the check.
+	 * @returns `Promise<code>&lt;</code>hasNode:Boolean<code>&gt;</code>` - result of the check.
 	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * 
@@ -262,14 +263,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#hasFile(node:String):Promise&lt;Boolean&gt;
+	 * ### Store#hasFile(node:String):Promise<code>&lt;</code>Boolean<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description checks if a node exists in the store as a file
 	 * @parameter
 	 * @parameter  - `node:String` - node suposed to be a file or not.
-	 * @returns `Promise&lt;hasFile:Boolean&gt;` - result of the check.
+	 * @returns `Promise<code>&lt;</code>hasFile:Boolean<code>&gt;</code>` - result of the check.
 	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * 
@@ -293,14 +294,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#hasFolder(node:String):Promise&lt;Boolean&gt;
+	 * ### Store#hasFolder(node:String):Promise<code>&lt;</code>Boolean<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description check if a node exists in the store as a folder
 	 * @parameter
 	 * @parameter  - `node:String` - node suposed to be a folder or not.
-	 * @returns `Promise&lt;hasFolder:Boolean&gt;` - result of the check.
+	 * @returns `Promise<code>&lt;</code>hasFolder:Boolean<code>&gt;</code>` - result of the check.
 	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * 
@@ -324,7 +325,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#readFile(node:String, options="utf8":String|Object):Promise&lt;String&gt;
+	 * ### Store#readFile(node:String, options="utf8":String|Object):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -332,7 +333,7 @@ class Store extends StoreInterface {
 	 * @parameter
 	 * @parameter  - `node:String` - node to be read as file.
 	 * @parameter  - `options:Object` - options of the file reading.
-	 * @returns `Promise&lt;contents:String&gt;` - the contents of the file.
+	 * @returns `Promise<code>&lt;</code>contents:String<code>&gt;</code>` - the contents of the file.
 	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * @throws  - when file cannot be read.
@@ -357,14 +358,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#readFolder(node:String):Promise&lt;String&gt;
+	 * ### Store#readFolder(node:String):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description reads a folder and returns its contents (files and folders).
 	 * @parameter
 	 * @parameter  - `node:String` - node to be read as folder.
-	 * @returns `Promise&lt;nodes:Array&lt;String&gt;&gth;` - nodes inside the folder.
+	 * @returns `Promise<code>&lt;</code>nodes:Array<code>&lt;</code>String<code>&gt;</code><code>&gt;</code>` - nodes inside the folder.
 	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * @throws  - when folder cannot be read.
@@ -389,7 +390,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise&lt;String&gt;
+	 * ### Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -398,7 +399,7 @@ class Store extends StoreInterface {
 	 * @parameter  - `node:String` - node to be written as file.
 	 * @parameter  - `contents:String|Buffer` - contents to be written.
 	 * @parameter  - `options:String|Object` - options of the writing.
-	 * @returns `Promise&lt;filepath:String&gt;` - node overwritten.
+	 * @returns `Promise<code>&lt;</code>filepath:String<code>&gt;</code>` - node overwritten.
 	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * @throws  - when file cannot be written.
@@ -423,7 +424,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#createFolder(node:String, options={}:String|Object):Promise&lt;String&gt;
+	 * ### Store#createFolder(node:String, options={}:String|Object):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -456,7 +457,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise&lt;String&gt;
+	 * ### Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -484,7 +485,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#deleteFile(node:String):Promise&lt;String&gt;
+	 * ### Store#deleteFile(node:String):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -516,7 +517,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#deleteFolder(node:String, options={}:String|Object):Promise&lt;String&gt;
+	 * ### Store#deleteFolder(node:String, options={}:String|Object):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -524,7 +525,7 @@ class Store extends StoreInterface {
 	 * @parameter
 	 * @parameter  - `node:String` - node to delete as folder
 	 * @parameter  - `options:Object` - options of the deletion
-	 * @returns `Promise&lt;folder:String&gt;` - folder to delete.
+	 * @returns `Promise<code>&lt;</code>folder:String<code>&gt;</code>` - folder to delete.
 	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * @throws  - when folder cannot be deleted.
@@ -549,14 +550,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#ensureFile(node:String):Promise&lt;String&gt;
+	 * ### Store#ensureFile(node:String):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description ensures that a file exists or creates it.
 	 * @parameter
 	 * @parameter  - `node:String` - file to be ensured.
-	 * @returns `Promise&lt;String&gt;` - the file ensured.
+	 * @returns `Promise<code>&lt;</code>String<code>&gt;</code>` - the file ensured.
 	 * @throws
 	 * @throws  - when the node is out of bounds.
 	 * @throws  - when the file cannot be ensured.
@@ -576,14 +577,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#ensureFolder(node:String):Promise&lt;String&gt;
+	 * ### Store#ensureFolder(node:String):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description ensures that a folder exists or creates it.
 	 * @parameter
 	 * @parameter  - `node:String` - folder to be ensured.
-	 * @returns `Promise&lt;String&gt;` - the folder ensured.
+	 * @returns `Promise<code>&lt;</code>String<code>&gt;</code>` - the folder ensured.
 	 * @throws
 	 * @throws  - when the node is out of bounds.
 	 * @throws  - when the folder cannot be ensured.
@@ -603,7 +604,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#rename(oldNode:String, newNode:String):Promise&lt;String&gt;
+	 * ### Store#rename(oldNode:String, newNode:String):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
@@ -611,7 +612,7 @@ class Store extends StoreInterface {
 	 * @parameter
 	 * @parameter  - `oldNode:String` - node source.
 	 * @parameter  - `newNode:String` - node destination.
-	 * @returns `Promise&lt;nodeDestination:String&gt;` - node destination.
+	 * @returns `Promise<code>&lt;</code>nodeDestination:String<code>&gt;</code>` - node destination.
 	 * @throws
 	 * @throws  - when node cannot be renamed.
 	 * @throws  - when a node is out of bounds.
@@ -690,13 +691,13 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#writeFiles(nodes:Object&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
+	 * ### Store#writeFiles(nodes:Object<code>&lt;</code>String<code>&gt;</code>):Promise<code>&lt;</code>Array<code>&lt;</code>String<code>&gt;</code><code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description creates multiple files with one operation.
 	 * @parameter
-	 * @parameter  - `nodes:Object&lt;String&gt;` - map `{ &lt;filename&gt;:&lt;filecontents&gt; }` of files to create.
+	 * @parameter  - `nodes:Object<code>&lt;</code>String<code>&gt;</code>` - map `{ <code>&lt;</code>filename<code>&gt;</code>:<code>&lt;</code>filecontents<code>&gt;</code> }` of files to create.
 	 * @returns `Promise`
 	 * @throws
 	 * @throws  - when a node is out of bounds.
@@ -720,13 +721,13 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#deleteFiles(nodes:Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
+	 * ### Store#deleteFiles(nodes:Array<code>&lt;</code>String<code>&gt;</code>):Promise<code>&lt;</code>Array<code>&lt;</code>String<code>&gt;</code><code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description deletes multiple files with one operation.
 	 * @parameter
-	 * @parameter  - `nodes:Array&lt;String&gt;` - list of files to delete.
+	 * @parameter  - `nodes:Array<code>&lt;</code>String<code>&gt;</code>` - list of files to delete.
 	 * @returns `Promise`
 	 * @throws
 	 * @throws  - when a node is out of bounds.
@@ -745,13 +746,13 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#createFolders(nodes:Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
+	 * ### Store#createFolders(nodes:Array<code>&lt;</code>String<code>&gt;</code>):Promise<code>&lt;</code>Array<code>&lt;</code>String<code>&gt;</code><code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description creates multiple folders with one operation.
 	 * @parameter
-	 * @parameter  - `nodes:Array&lt;String&gt;` - list of folders to create.
+	 * @parameter  - `nodes:Array<code>&lt;</code>String<code>&gt;</code>` - list of folders to create.
 	 * @returns `Promise`
 	 * @throws
 	 * @throws  - when a node is out of bounds.
@@ -768,13 +769,13 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#deleteFolders(nodes:Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
+	 * ### Store#deleteFolders(nodes:Array<code>&lt;</code>String<code>&gt;</code>):Promise<code>&lt;</code>Array<code>&lt;</code>String<code>&gt;</code><code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description deletes multiple folders with one operation.
 	 * @parameter
-	 * @parameter  - `nodes:Array&lt;String&gt;` - list of folders to delete.
+	 * @parameter  - `nodes:Array<code>&lt;</code>String<code>&gt;</code>` - list of folders to delete.
 	 * @returns `Promise`
 	 * @throws
 	 * @throws  - when a node is out of bounds.
@@ -791,14 +792,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#ensureFiles(nodes:Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
+	 * ### Store#ensureFiles(nodes:Array<code>&lt;</code>String<code>&gt;</code>):Promise<code>&lt;</code>Array<code>&lt;</code>String<code>&gt;</code><code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description ensures that some files exist or creates them.
 	 * @parameter
-	 * @parameter  - `node:Array&lt;String&gt;` - files to be ensured.
-	 * @returns `Promise&lt;Array&lt;String&gt;&gth;` - the files ensured.
+	 * @parameter  - `node:Array<code>&lt;</code>String<code>&gt;</code>` - files to be ensured.
+	 * @returns `Promise<code>&lt;</code>Array<code>&lt;</code>String<code>&gt;</code><code>&gt;</code>` - the files ensured.
 	 * @throws
 	 * @throws  - when a node is out of bounds.
 	 * @throws  - when the files cannot be ensured.
@@ -813,14 +814,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#ensureFolders(nodes:Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
+	 * ### Store#ensureFolders(nodes:Array<code>&lt;</code>String<code>&gt;</code>):Promise<code>&lt;</code>Array<code>&lt;</code>String<code>&gt;</code><code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description ensures that some folders exist or creates them.
 	 * @parameter
 	 * @parameter  - `node:String` - folders to be ensured.
-	 * @returns `Promise&lt;String&gt;` - the folders ensured.
+	 * @returns `Promise<code>&lt;</code>String<code>&gt;</code>` - the folders ensured.
 	 * @throws
 	 * @throws  - when a node is out of bounds.
 	 * @throws  - when the folders cannot be ensured.
@@ -836,14 +837,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#deleteRecursively(node:String):Promise&lt;String&gt;
+	 * ### Store#deleteRecursively(node:String):Promise<code>&lt;</code>String<code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description deletes a node (file or folder) and all its subnodes.
 	 * @parameter
 	 * @parameter  - `node:String` - node to delete recursively.
-	 * @returns `Promise&lt;String&gt;` - the node to delete recursively.
+	 * @returns `Promise<code>&lt;</code>String<code>&gt;</code>` - the node to delete recursively.
 	 * @throws
 	 * @throws  - when the node is out of bounds.
 	 * @throws  - when the node cannot be deleted recursively.
@@ -865,14 +866,14 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### Store#findPatterns(patterns:String|Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
+	 * ### Store#findPatterns(patterns:String|Array<code>&lt;</code>String<code>&gt;</code>):Promise<code>&lt;</code>Array<code>&lt;</code>String<code>&gt;</code><code>&gt;</code>
 	 * 
 	 * @method
 	 * @asynchronous
 	 * @description finds nodes by [glob patterns](https://www.npmjs.com/package/glob#glob-primer).
 	 * @parameter
-	 * @parameter  - `patterns:String|Array&lt;String&gt;` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
-	 * @returns `Promise&lt;Array&lt;String&gt;&gth;` - the nodes matched.
+	 * @parameter  - `patterns:String|Array<code>&lt;</code>String<code>&gt;</code>` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
+	 * @returns `Promise<code>&lt;</code>Array<code>&lt;</code>String<code>&gt;</code><code>&gt;</code>` - the nodes matched.
 	 * @throws
 	 * @throws  - when a node is out of bounds.
 	 * @throws  - when the search produces some error.
