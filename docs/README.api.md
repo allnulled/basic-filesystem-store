@@ -3,6 +3,12 @@
 
 
 
+**Static Method**.
+
+
+**Synchronous**.
+
+
 **Description**:  creates a new store instance. Read about the constructor of the class for more info.
 
 
@@ -10,6 +16,9 @@
 
 ### `Store.DEFAULT_OPTIONS:Object`
 
+
+
+**Static Property**.
 
 
 **Description**:  default values of options. Any property here can be overwritten from the constructor's options.
@@ -23,6 +32,9 @@
 
 ### `Store.constructor(options={}:Object):Store`
 
+
+
+**Constructor**.
 
 
 **Description**:  method that generates a new store.
@@ -40,13 +52,22 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**: 
+
+
+
+
+
 **Description**:  ensures the existence of `basedir` folder.
 
 
-**Asynchronous**.
-
-
 **Returns**:  `Promise`
+
+
+**Throws**:  when folder cannot be ensured.
 
 
 
@@ -55,16 +76,22 @@
 
 
 
+**Method**.
+
+
+**Synchronous**.
+
+
 **Description**:  returns the full path from an identifier of the node in the store.
 
 
 **Parameter**:  `node:String` - node identifier, or subpath. Must be inside the folder.
 
 
-**Returns**:  `String | Error` 
+**Returns**:  `filepath:String | Error` - full path of the file, or an object error. Must be checked once returned.
 
 
-**Throws**:  `new Error("PathOutOfScopeError")` - error indicating that the path is out of the scope of the store. This error is not thrown, but returned.
+**Throws**:  when node is out of bounds.
 
 
 
@@ -73,13 +100,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  returns a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object.
 
 
-**Parameter**:  `node:String`
+**Parameter**:  `node:String` - node to describe.
 
 
-**Returns**:  asynchronously, a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object
+**Returns**:  `Promise<stats:Object>` a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object of the node.
+
+
+**Throws**:  when no node is found.
+
+
+ when node is out of bounds.
 
 
 
@@ -88,16 +127,22 @@
 
 
 
-**Description**:  @TODO
+**Method**.
 
 
-**Parameter**:  @TODO
+**Asynchronous**.
 
 
-**Returns**:  @TODO
+**Description**:  checks if a node exists in the store
 
 
-**Throws**:  @TODO
+**Parameter**:  `node:String` - node suposed to exist.
+
+
+**Returns**:  `Promise<hasNode:Boolean>` - result of the check.
+
+
+**Throws**:  when node is out of bounds.
 
 
 
@@ -106,16 +151,22 @@
 
 
 
-**Description**:  @TODO
+**Method**.
 
 
-**Parameter**:  @TODO
+**Asynchronous**.
 
 
-**Returns**:  @TODO
+**Description**:  checks if a node exists in the store as a file
 
 
-**Throws**:  @TODO
+**Parameter**:  `node:String` - node suposed to be a file or not.
+
+
+**Returns**:  `Promise<hasFile:Boolean>` - result of the check.
+
+
+**Throws**:  when node is out of bounds.
 
 
 
@@ -124,16 +175,22 @@
 
 
 
-**Description**:  @TODO
+**Method**.
 
 
-**Parameter**:  @TODO
+**Asynchronous**.
 
 
-**Returns**:  @TODO
+**Description**:  check if a node exists in the store as a folder
 
 
-**Throws**:  @TODO
+**Parameter**:  `node:String` - node suposed to be a folder or not.
+
+
+**Returns**:  `Promise<hasFolder:Boolean>` - result of the check.
+
+
+**Throws**:  when node is out of bounds.
 
 
 
@@ -142,16 +199,28 @@
 
 
 
-**Description**:  @TODO
+**Method**.
 
 
-**Parameter**:  @TODO
+**Asynchronous**.
 
 
-**Returns**:  @TODO
+**Description**:  reads a file and returns its contents.
 
 
-**Throws**:  @TODO
+**Parameter**:  `node:String` - node to be read as file.
+
+
+ `options:Object` - options of the file reading.
+
+
+**Returns**:  `Promise<contents:String>` - the contents of the file.
+
+
+**Throws**:  when node is out of bounds.
+
+
+ when file cannot be read.
 
 
 
@@ -160,16 +229,22 @@
 
 
 
-**Description**:  @TODO
+**Method**.
 
 
-**Parameter**:  @TODO
+**Description**:  reads a folder and returns its contents (files and folders).
 
 
-**Returns**:  @TODO
+**Parameter**:  `node:String` - node to be read as folder.
 
 
-**Throws**:  @TODO
+**Returns**:  `Promise<nodes:Array<String>>` - nodes inside the folder.
+
+
+**Throws**:  when node is out of bounds.
+
+
+ when folder cannot be read.
 
 
 
@@ -178,16 +253,28 @@
 
 
 
-**Description**:  @TODO
+**Method**.
 
 
-**Parameter**:  @TODO
+**Description**:  writes contents to a file based in some options.
 
 
-**Returns**:  @TODO
+**Parameter**:  `node:String` - node to be written as file.
 
 
-**Throws**:  @TODO
+ `contents:String|Buffer` - contents to be written.
+
+
+ `options:String|Object` - options of the writing.
+
+
+**Returns**:  `Promise<filepath:String>` - node overwritten.
+
+
+**Throws**:  when node is out of bounds.
+
+
+ when file cannot be written.
 
 
 
@@ -196,7 +283,13 @@
 
 
 
-**Description**:  @TODO
+**Method**.
+
+
+**Asynchronous**.
+
+
+**Description**:  
 
 
 **Parameter**:  @TODO
@@ -212,6 +305,12 @@
 
 ### `Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>`
 
+
+
+**Method**.
+
+
+**Asynchronous**.
 
 
 **Description**:  @TODO
@@ -232,6 +331,12 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  @TODO
 
 
@@ -248,6 +353,12 @@
 
 ### `Store#deleteFolder(node:String, options={}:String|Object):Promise<String>`
 
+
+
+**Method**.
+
+
+**Asynchronous**.
 
 
 **Description**:  @TODO
@@ -268,6 +379,12 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  @TODO
 
 
@@ -284,6 +401,12 @@
 
 ### `Store#createReadStream(node:String):ReadStream`
 
+
+
+**Method**.
+
+
+**Asynchronous**.
 
 
 **Description**:  @TODO
@@ -304,6 +427,12 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  @TODO
 
 
@@ -322,16 +451,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  creates multiple files with one operation.
 
 
 **Parameter**:  `nodes:Object<String>` - map `{ <filename>:<filecontents> }` of files to create.
 
 
-**Returns**:  `Promise<Array<String>>` - asynchronously, the list of files created.
+**Returns**:  `Promise<Array<String>>` - the list of files created.
 
 
-**Throws**:  error when some file cannot be created.
+**Throws**:  when a node is out of bounds.
+
+
+ when some file cannot be created.
 
 
 
@@ -340,16 +478,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  deletes multiple files with one operation.
 
 
 **Parameter**:  `nodes:Array<String>` - list of files to delete.
 
 
-**Returns**:  `Promise<Array<String>>` - asynchronously, the list of files deleted.
+**Returns**:  `Promise<Array<String>>` - the list of files deleted.
 
 
-**Throws**:  error when some file cannot be deleted.
+**Throws**:  when a node is out of bounds.
+
+
+ when some file cannot be deleted.
 
 
 
@@ -358,16 +505,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  creates multiple folders with one operation.
 
 
 **Parameter**:  `nodes:Array<String>` - list of folders to create.
 
 
-**Returns**:  `Promise<Array<String>>` - asynchronously, the list of folders created.
+**Returns**:  `Promise<Array<String>>` - the list of folders created.
 
 
-**Throws**:  error when some folder cannot be created.
+**Throws**:  when a node is out of bounds.
+
+
+ when some folder cannot be created.
 
 
 
@@ -376,16 +532,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  deletes multiple folders with one operation.
 
 
 **Parameter**:  `nodes:Array<String>` - list of folders to delete.
 
 
-**Returns**:  `Promise<Array<String>>` - asynchronously, the list of folders deleted.
+**Returns**:  `Promise<Array<String>>` - the list of folders deleted.
 
 
-**Throws**:  error when some folder cannot be deleted.
+**Throws**:  when a node is out of bounds.
+
+
+ when some folder cannot be deleted.
 
 
 
@@ -394,16 +559,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  ensures that a file exists or creates it.
 
 
 **Parameter**:  `node:String` - file to be ensured.
 
 
-**Returns**:  `Promise<String>` - asynchronously, the file ensured.
+**Returns**:  `Promise<String>` - the file ensured.
 
 
-**Throws**:  error when the file cannot be ensured.
+**Throws**:  when the node is out of bounds.
+
+
+ when the file cannot be ensured.
 
 
 
@@ -412,16 +586,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  ensures that some files exist or creates them.
 
 
 **Parameter**:  `node:Array<String>` - files to be ensured.
 
 
-**Returns**:  `Promise<Array<String>>` - asynchronously, the files ensured.
+**Returns**:  `Promise<Array<String>>` - the files ensured.
 
 
-**Throws**:  error when the files cannot be ensured.
+**Throws**:  when a node is out of bounds.
+
+
+ when the files cannot be ensured.
 
 
 
@@ -430,16 +613,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  ensures that a folder exists or creates it.
 
 
 **Parameter**:  `node:String` - folder to be ensured.
 
 
-**Returns**:  `Promise<String>` - asynchronously, the folder ensured.
+**Returns**:  `Promise<String>` - the folder ensured.
 
 
-**Throws**:  error when the folder cannot be ensured.
+**Throws**:  when the node is out of bounds.
+
+
+ when the folder cannot be ensured.
 
 
 
@@ -448,16 +640,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  ensures that some folders exist or creates them.
 
 
 **Parameter**:  `node:String` - folders to be ensured.
 
 
-**Returns**:  `Promise<String>` - asynchronously, the folders ensured.
+**Returns**:  `Promise<String>` - the folders ensured.
 
 
-**Throws**:  error when the folders cannot be ensured.
+**Throws**:  when a node is out of bounds.
+
+
+ when the folders cannot be ensured.
 
 
 
@@ -466,16 +667,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  deletes a node (file or folder) and all its subnodes.
 
 
 **Parameter**:  `node:String` - node to delete recursively.
 
 
-**Returns**:  `Promise<String>` - asynchronously, the node deleted.
+**Returns**:  `Promise<String>` - the node to delete recursively.
 
 
-**Throws**:  error when the node cannot be deleted recursively.
+**Throws**:  when the node is out of bounds.
+
+
+ when the node cannot be deleted recursively.
 
 
 
@@ -484,16 +694,25 @@
 
 
 
+**Method**.
+
+
+**Asynchronous**.
+
+
 **Description**:  finds nodes by [glob patterns](https://www.npmjs.com/package/glob#glob-primer).
 
 
 **Parameter**:  `patterns:String|Array<String>` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
 
 
-**Returns**:  `Promise<Array<String>>` - asynchronously, the nodes matched.
+**Returns**:  `Promise<Array<String>>` - the nodes matched.
 
 
-**Throws**:  error when the search produces some error.
+**Throws**:  when a node is out of bounds.
+
+
+ when the search produces some error.
 
 
 
