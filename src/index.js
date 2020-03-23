@@ -652,7 +652,7 @@ class Store {
 			if(filepath instanceof Error) {
 				return fail(filepath);
 			}
-			return rimraf(filepath, {glob: false, ...options}, function() {
+			return rimraf(filepath, {glob: false, ...options}, () => {
 				return ok(filepath.replace(this.basedir, ""));
 			})
 		});
