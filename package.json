@@ -38,10 +38,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allnulled/filesystem-store.git"
+    "url": "git+https://github.com/allnulled/universal-filesystem-store.git"
   },
   "bugs": {
-    "url": "https://github.com/allnulled/filesystem-store/issues"
+    "url": "https://github.com/allnulled/universal-filesystem-store/issues"
   },
-  "homepage": "https://github.com/allnulled/filesystem-store#readme"
+  "homepage": "https://github.com/allnulled/universal-filesystem-store#readme"
 }
