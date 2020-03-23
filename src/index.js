@@ -401,8 +401,9 @@ class Store {
 	 * 
 	 * @method
 	 * @asynchronous
-	 * @description @TODO
-	 * @parameter @TODO
+	 * @description deletes a node as folder
+	 * @parameter `node:String` - node to delete as folder
+	 * @parameter `options:Object` - options of the deletion
 	 * @returns @TODO
 	 * @throws @TODO
 	 * 

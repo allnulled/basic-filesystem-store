@@ -420,10 +420,13 @@
 **Asynchronous**.
 
 
-**Description**:  @TODO
+**Description**:  deletes a node as folder
 
 
-**Parameter**:  @TODO
+**Parameter**:  `node:String` - node to delete as folder
+
+
+ `options:Object` - options of the deletion
 
 
 **Returns**:  @TODO

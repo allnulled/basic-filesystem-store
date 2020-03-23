@@ -492,10 +492,13 @@ The current API supports this set of methods:
 **Asynchronous**.
 
 
-**Description**:  @TODO
+**Description**:  deletes a node as folder
 
 
-**Parameter**:  @TODO
+**Parameter**:  `node:String` - node to delete as folder
+
+
+ `options:Object` - options of the deletion
 
 
 **Returns**:  @TODO
