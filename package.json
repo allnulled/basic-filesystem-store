@@ -1,5 +1,5 @@
 {
-  "name": "filesystem-store",
+  "name": "universal-filesystem-store",
   "version": "0.0.1",
   "description": "Basic store for filesystem, based in promises.",
   "main": "src/index.js",

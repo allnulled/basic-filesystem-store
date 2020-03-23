@@ -1,5 +1,5 @@
 {
-  "name": "filesystem-store",
+  "name": "universal-filesystem-store",
   "version": "0.0.1",
   "lockfileVersion": 1,
   "requires": true,
