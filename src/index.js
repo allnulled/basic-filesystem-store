@@ -67,6 +67,7 @@ class Store {
 	 * @description ensures the existence of `basedir` folder.
 	 * @asynchronous
 	 * @returns `Promise`
+	 * @throws
 	 * @throws  - when folder cannot be ensured.
 	 * 
 	 */
@@ -89,8 +90,10 @@ class Store {
 	 * @method
 	 * @synchronous
 	 * @description returns the full path from an identifier of the node in the store.
+	 * @parameter
 	 * @parameter  - `node:String` - node identifier, or subpath. Must be inside the folder.
 	 * @returns `filepath:String | Error` - full path of the file, or an object error. Must be checked once returned.
+	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * 
 	 */
@@ -111,6 +114,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description returns a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object.
+	 * @parameter
 	 * @parameter  - `node:String` - node to describe.
 	 * @returns `Promise&lt;stats:Object&gt;` a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object of the node.
 	 * @throws
@@ -139,8 +143,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description checks if a node exists in the store
+	 * @parameter
 	 * @parameter  - `node:String` - node suposed to exist.
 	 * @returns `Promise&lt;hasNode:Boolean&gt;` - result of the check.
+	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * 
 	 */
@@ -165,8 +171,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description checks if a node exists in the store as a file
+	 * @parameter
 	 * @parameter  - `node:String` - node suposed to be a file or not.
 	 * @returns `Promise&lt;hasFile:Boolean&gt;` - result of the check.
+	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * 
 	 */
@@ -194,8 +202,10 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description check if a node exists in the store as a folder
+	 * @parameter
 	 * @parameter  - `node:String` - node suposed to be a folder or not.
 	 * @returns `Promise&lt;hasFolder:Boolean&gt;` - result of the check.
+	 * @throws
 	 * @throws  - when node is out of bounds.
 	 * 
 	 */
@@ -256,6 +266,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description reads a folder and returns its contents (files and folders).
+	 * @parameter
 	 * @parameter  - `node:String` - node to be read as folder.
 	 * @returns `Promise&lt;nodes:Array&lt;String&gt;&gth;` - nodes inside the folder.
 	 * @throws
@@ -382,6 +393,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description deletes a node as file.
+	 * @parameter
 	 * @parameter  - `node:String` - node to be deleted as file.
 	 * @returns `filepath:String` - node deleted.
 	 * @throws
@@ -446,6 +458,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description ensures that a file exists or creates it.
+	 * @parameter
 	 * @parameter  - `node:String` - file to be ensured.
 	 * @returns `Promise&lt;String&gt;` - the file ensured.
 	 * @throws
@@ -472,6 +485,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description ensures that a folder exists or creates it.
+	 * @parameter
 	 * @parameter  - `node:String` - folder to be ensured.
 	 * @returns `Promise&lt;String&gt;` - the folder ensured.
 	 * @throws
@@ -535,6 +549,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description creates a node readable stream
+	 * @parameter
 	 * @parameter  - `node:String` - node to create the stream from.
 	 * @returns `readable:Stream` - readable stream of the node.
 	 * @throws
@@ -559,6 +574,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description creates a node writable stream
+	 * @parameter
 	 * @parameter  - `node:String` - node to create the stream from.
 	 * @returns `writable:Stream` - writable stream of the node.
 	 * @throws
@@ -583,6 +599,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description creates multiple files with one operation.
+	 * @parameter
 	 * @parameter  - `nodes:Object&lt;String&gt;` - map `{ &lt;filename&gt;:&lt;filecontents&gt; }` of files to create.
 	 * @returns `Promise`
 	 * @throws
@@ -612,6 +629,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description deletes multiple files with one operation.
+	 * @parameter
 	 * @parameter  - `nodes:Array&lt;String&gt;` - list of files to delete.
 	 * @returns `Promise`
 	 * @throws
@@ -636,6 +654,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description creates multiple folders with one operation.
+	 * @parameter
 	 * @parameter  - `nodes:Array&lt;String&gt;` - list of folders to create.
 	 * @returns `Promise`
 	 * @throws
@@ -658,6 +677,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description deletes multiple folders with one operation.
+	 * @parameter
 	 * @parameter  - `nodes:Array&lt;String&gt;` - list of folders to delete.
 	 * @returns `Promise`
 	 * @throws
@@ -680,6 +700,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description ensures that some files exist or creates them.
+	 * @parameter
 	 * @parameter  - `node:Array&lt;String&gt;` - files to be ensured.
 	 * @returns `Promise&lt;Array&lt;String&gt;&gth;` - the files ensured.
 	 * @throws
@@ -701,6 +722,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description ensures that some folders exist or creates them.
+	 * @parameter
 	 * @parameter  - `node:String` - folders to be ensured.
 	 * @returns `Promise&lt;String&gt;` - the folders ensured.
 	 * @throws
@@ -723,6 +745,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description deletes a node (file or folder) and all its subnodes.
+	 * @parameter
 	 * @parameter  - `node:String` - node to delete recursively.
 	 * @returns `Promise&lt;String&gt;` - the node to delete recursively.
 	 * @throws
@@ -751,6 +774,7 @@ class Store {
 	 * @method
 	 * @asynchronous
 	 * @description finds nodes by [glob patterns](https://www.npmjs.com/package/glob#glob-primer).
+	 * @parameter
 	 * @parameter  - `patterns:String|Array&lt;String&gt;` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
 	 * @returns `Promise&lt;Array&lt;String&gt;&gth;` - the nodes matched.
 	 * @throws
