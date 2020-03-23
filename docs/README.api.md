@@ -108,7 +108,7 @@
 
 ----
 
-### Store#describe(node:String):Promise<Object>
+### Store#describe(node:String):Promise&lt;Object&gt;
 
 
 
@@ -124,7 +124,7 @@
 **Parameter**:  `node:String` - node to describe.
 
 
-**Returns**:  `Promise<stats:Object>` a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object of the node.
+**Returns**:  `Promise&lt;stats:Object&gt;` a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object of the node.
 
 
 **Throws**:  when no node is found.
@@ -137,7 +137,7 @@
 
 ----
 
-### Store#has(node:String):Promise<Boolean>
+### Store#has(node:String):Promise&lt;Boolean&gt;
 
 
 
@@ -153,7 +153,7 @@
 **Parameter**:  `node:String` - node suposed to exist.
 
 
-**Returns**:  `Promise<hasNode:Boolean>` - result of the check.
+**Returns**:  `Promise&lt;hasNode:Boolean&gt;` - result of the check.
 
 
 **Throws**:  when node is out of bounds.
@@ -163,7 +163,7 @@
 
 ----
 
-### Store#hasFile(node:String):Promise<Boolean>
+### Store#hasFile(node:String):Promise&lt;Boolean&gt;
 
 
 
@@ -179,7 +179,7 @@
 **Parameter**:  `node:String` - node suposed to be a file or not.
 
 
-**Returns**:  `Promise<hasFile:Boolean>` - result of the check.
+**Returns**:  `Promise&lt;hasFile:Boolean&gt;` - result of the check.
 
 
 **Throws**:  when node is out of bounds.
@@ -189,7 +189,7 @@
 
 ----
 
-### Store#hasFolder(node:String):Promise<Boolean>
+### Store#hasFolder(node:String):Promise&lt;Boolean&gt;
 
 
 
@@ -205,7 +205,7 @@
 **Parameter**:  `node:String` - node suposed to be a folder or not.
 
 
-**Returns**:  `Promise<hasFolder:Boolean>` - result of the check.
+**Returns**:  `Promise&lt;hasFolder:Boolean&gt;` - result of the check.
 
 
 **Throws**:  when node is out of bounds.
@@ -215,7 +215,7 @@
 
 ----
 
-### Store#readFile(node:String, options="utf8":String|Object):Promise<String>
+### Store#readFile(node:String, options="utf8":String|Object):Promise&lt;String&gt;
 
 
 
@@ -234,7 +234,7 @@
  `options:Object` - options of the file reading.
 
 
-**Returns**:  `Promise<contents:String>` - the contents of the file.
+**Returns**:  `Promise&lt;contents:String&gt;` - the contents of the file.
 
 
 **Throws**:  when node is out of bounds.
@@ -247,7 +247,7 @@
 
 ----
 
-### Store#readFolder(node:String):Promise<String>
+### Store#readFolder(node:String):Promise&lt;String&gt;
 
 
 
@@ -263,7 +263,7 @@
 **Parameter**:  `node:String` - node to be read as folder.
 
 
-**Returns**:  `Promise<nodes:Array<String>>` - nodes inside the folder.
+**Returns**:  `Promise&lt;nodes:Array&lt;String&gt;&gth;` - nodes inside the folder.
 
 
 **Throws**:  when node is out of bounds.
@@ -276,7 +276,7 @@
 
 ----
 
-### Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>
+### Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise&lt;String&gt;
 
 
 
@@ -298,7 +298,7 @@
  `options:String|Object` - options of the writing.
 
 
-**Returns**:  `Promise<filepath:String>` - node overwritten.
+**Returns**:  `Promise&lt;filepath:String&gt;` - node overwritten.
 
 
 **Throws**:  when node is out of bounds.
@@ -311,7 +311,7 @@
 
 ----
 
-### Store#createFolder(node:String, options={}:String|Object):Promise<String>
+### Store#createFolder(node:String, options={}:String|Object):Promise&lt;String&gt;
 
 
 
@@ -343,7 +343,7 @@
 
 ----
 
-### Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>
+### Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise&lt;String&gt;
 
 
 
@@ -381,7 +381,7 @@
 
 ----
 
-### Store#deleteFile(node:String):Promise<String>
+### Store#deleteFile(node:String):Promise&lt;String&gt;
 
 
 
@@ -410,7 +410,7 @@
 
 ----
 
-### Store#deleteFolder(node:String, options={}:String|Object):Promise<String>
+### Store#deleteFolder(node:String, options={}:String|Object):Promise&lt;String&gt;
 
 
 
@@ -439,7 +439,7 @@
 
 ----
 
-### Store#ensureFile(node:String):Promise<String>
+### Store#ensureFile(node:String):Promise&lt;String&gt;
 
 
 
@@ -455,7 +455,7 @@
 **Parameter**:  `node:String` - file to be ensured.
 
 
-**Returns**:  `Promise<String>` - the file ensured.
+**Returns**:  `Promise&lt;String&gt;` - the file ensured.
 
 
 **Throws**:  when the node is out of bounds.
@@ -468,7 +468,7 @@
 
 ----
 
-### Store#ensureFolder(node:String):Promise<String>
+### Store#ensureFolder(node:String):Promise&lt;String&gt;
 
 
 
@@ -484,7 +484,7 @@
 **Parameter**:  `node:String` - folder to be ensured.
 
 
-**Returns**:  `Promise<String>` - the folder ensured.
+**Returns**:  `Promise&lt;String&gt;` - the folder ensured.
 
 
 **Throws**:  when the node is out of bounds.
@@ -497,7 +497,7 @@
 
 ----
 
-### Store#rename(oldNode:String, newNode:String):Promise<String>
+### Store#rename(oldNode:String, newNode:String):Promise&lt;String&gt;
 
 
 
@@ -516,7 +516,7 @@
  `newNode:String` - node destination.
 
 
-**Returns**:  `Promise<nodeDestination:String>` - node destination.
+**Returns**:  `Promise&lt;nodeDestination:String&gt;` - node destination.
 
 
 **Throws**:  when node cannot be renamed.
@@ -587,7 +587,7 @@
 
 ----
 
-### Store#writeFiles(nodes:Object<String>):Promise<Array<String>>
+### Store#writeFiles(nodes:Object&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
 
 
 
@@ -600,7 +600,7 @@
 **Description**:  creates multiple files with one operation.
 
 
-**Parameter**:  `nodes:Object<String>` - map `{ <filename>:<filecontents> }` of files to create.
+**Parameter**:  `nodes:Object&lt;String&gt;` - map `{ &lt;filename&gt;:&lt;filecontents&gt; }` of files to create.
 
 
 **Returns**:  `Promise`
@@ -616,7 +616,7 @@
 
 ----
 
-### Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>
+### Store#deleteFiles(nodes:Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
 
 
 
@@ -629,7 +629,7 @@
 **Description**:  deletes multiple files with one operation.
 
 
-**Parameter**:  `nodes:Array<String>` - list of files to delete.
+**Parameter**:  `nodes:Array&lt;String&gt;` - list of files to delete.
 
 
 **Returns**:  `Promise`
@@ -645,7 +645,7 @@
 
 ----
 
-### Store#createFolders(nodes:Array<String>):Promise<Array<String>>
+### Store#createFolders(nodes:Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
 
 
 
@@ -658,7 +658,7 @@
 **Description**:  creates multiple folders with one operation.
 
 
-**Parameter**:  `nodes:Array<String>` - list of folders to create.
+**Parameter**:  `nodes:Array&lt;String&gt;` - list of folders to create.
 
 
 **Returns**:  `Promise`
@@ -674,7 +674,7 @@
 
 ----
 
-### Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>
+### Store#deleteFolders(nodes:Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
 
 
 
@@ -687,7 +687,7 @@
 **Description**:  deletes multiple folders with one operation.
 
 
-**Parameter**:  `nodes:Array<String>` - list of folders to delete.
+**Parameter**:  `nodes:Array&lt;String&gt;` - list of folders to delete.
 
 
 **Returns**:  `Promise`
@@ -703,7 +703,7 @@
 
 ----
 
-### Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>
+### Store#ensureFiles(nodes:Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
 
 
 
@@ -716,10 +716,10 @@
 **Description**:  ensures that some files exist or creates them.
 
 
-**Parameter**:  `node:Array<String>` - files to be ensured.
+**Parameter**:  `node:Array&lt;String&gt;` - files to be ensured.
 
 
-**Returns**:  `Promise<Array<String>>` - the files ensured.
+**Returns**:  `Promise&lt;Array&lt;String&gt;&gth;` - the files ensured.
 
 
 **Throws**:  when a node is out of bounds.
@@ -732,7 +732,7 @@
 
 ----
 
-### Store#ensureFolders(nodes:Array<String>):Promise<Array<String>>
+### Store#ensureFolders(nodes:Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
 
 
 
@@ -748,7 +748,7 @@
 **Parameter**:  `node:String` - folders to be ensured.
 
 
-**Returns**:  `Promise<String>` - the folders ensured.
+**Returns**:  `Promise&lt;String&gt;` - the folders ensured.
 
 
 **Throws**:  when a node is out of bounds.
@@ -761,7 +761,7 @@
 
 ----
 
-### Store#deleteRecursively(node:String):Promise<String>
+### Store#deleteRecursively(node:String):Promise&lt;String&gt;
 
 
 
@@ -777,7 +777,7 @@
 **Parameter**:  `node:String` - node to delete recursively.
 
 
-**Returns**:  `Promise<String>` - the node to delete recursively.
+**Returns**:  `Promise&lt;String&gt;` - the node to delete recursively.
 
 
 **Throws**:  when the node is out of bounds.
@@ -790,7 +790,7 @@
 
 ----
 
-### Store#findPatterns(patterns:String|Array<String>):Promise<Array<String>>
+### Store#findPatterns(patterns:String|Array&lt;String&gt;):Promise&lt;Array&lt;String&gt;&gth;
 
 
 
@@ -803,10 +803,10 @@
 **Description**:  finds nodes by [glob patterns](https://www.npmjs.com/package/glob#glob-primer).
 
 
-**Parameter**:  `patterns:String|Array<String>` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
+**Parameter**:  `patterns:String|Array&lt;String&gt;` - [glob patterns](https://www.npmjs.com/package/glob#glob-primer) to match.
 
 
-**Returns**:  `Promise<Array<String>>` - the nodes matched.
+**Returns**:  `Promise&lt;Array&lt;String&gt;&gth;` - the nodes matched.
 
 
 **Throws**:  when a node is out of bounds.
