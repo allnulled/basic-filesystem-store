@@ -501,10 +501,13 @@ The current API supports this set of methods:
  `options:Object` - options of the deletion
 
 
-**Returns**:  @TODO
+**Returns**:  `Promise&lt;folder:String&gt;` - folder to delete.
 
 
-**Throws**:  @TODO
+**Throws**:  when node is out of bounds.
+
+
+ when folder cannot be deleted.
 
 
 

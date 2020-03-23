@@ -404,8 +404,9 @@ class Store {
 	 * @description deletes a node as folder
 	 * @parameter `node:String` - node to delete as folder
 	 * @parameter `options:Object` - options of the deletion
-	 * @returns @TODO
-	 * @throws @TODO
+	 * @returns `Promise&lt;folder:String&gt;` - folder to delete.
+	 * @throws when node is out of bounds.
+	 * @throws when folder cannot be deleted.
 	 * 
 	 */
 	deleteFolder(node, options = {}) {
