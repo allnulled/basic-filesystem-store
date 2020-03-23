@@ -229,6 +229,7 @@ class Store {
 	 * ### `Store#readFolder(node:String):Promise<String>`
 	 * 
 	 * @method
+	 * @asynchronous
 	 * @description reads a folder and returns its contents (files and folders).
 	 * @parameter `node:String` - node to be read as folder.
 	 * @returns `Promise<nodes:Array<String>>` - nodes inside the folder.
@@ -256,6 +257,7 @@ class Store {
 	 * ### `Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>`
 	 * 
 	 * @method
+	 * @asynchronous
 	 * @description writes contents to a file based in some options.
 	 * @parameter `node:String` - node to be written as file.
 	 * @parameter `contents:String|Buffer` - contents to be written.
@@ -286,10 +288,12 @@ class Store {
 	 * 
 	 * @method
 	 * @asynchronous
-	 * @description 
-	 * @parameter @TODO
-	 * @returns @TODO
-	 * @throws @TODO
+	 * @description creates a folder.
+	 * @parameter `node:String` - node to create as folder.
+	 * @parameter `options:Object` - options of the creation.
+	 * @returns `filepath:String` - node created.
+	 * @throws when node is out of bounds.
+	 * @throws when folder cannot be created.
 	 * 
 	 */
 	createFolder(node, options = {}) {
@@ -313,10 +317,14 @@ class Store {
 	 * 
 	 * @method
 	 * @asynchronous
-	 * @description @TODO
-	 * @parameter @TODO
-	 * @returns @TODO
-	 * @throws @TODO
+	 * @description if a file exists (1), it updates its content. Otherwise, it fails.
+	 * @parameter `node:String` - node to be updated.
+	 * @parameter `contents:String|Buffer` - contents to write.
+	 * @parameter `options:String|Object` - options of the writing.
+	 * @returns `Promise`
+	 * @throws when node is not a file.
+	 * @throws when node is out of bounds.
+	 * @throws when file cannot be written.
 	 * 
 	 */
 	updateFile(node, contents, options = "utf8") {
@@ -333,10 +341,11 @@ class Store {
 	 * 
 	 * @method
 	 * @asynchronous
-	 * @description @TODO
-	 * @parameter @TODO
-	 * @returns @TODO
-	 * @throws @TODO
+	 * @description deletes a node as file.
+	 * @parameter `node:String` - node to be deleted as file.
+	 * @returns `filepath:String` - node deleted.
+	 * @throws when the node is out of bounds.
+	 * @throws when the file cannot be deleted.
 	 * 
 	 */
 	deleteFile(node) {
@@ -383,14 +392,62 @@ class Store {
 
 	/**
 	 * 
+	 * ### `Store#ensureFile(node:String):Promise<String>`
+	 * 
+	 * @method
+	 * @asynchronous
+	 * @description ensures that a file exists or creates it.
+	 * @parameter `node:String` - file to be ensured.
+	 * @returns `Promise<String>` - the file ensured.
+	 * @throws when the node is out of bounds.
+	 * @throws when the file cannot be ensured.
+	 * 
+	 */
+	ensureFile(node) {
+		return new Promise((ok, fail) => {
+			const filepath = this.getPath(node);
+			if(filepath instanceof Error) {
+				return fail(filepath);
+			}
+			return fs.ensureFile(filepath).then(ok).catch(fail);
+		});
+	}
+
+	/**
+	 * 
+	 * ### `Store#ensureFolder(node:String):Promise<String>`
+	 * 
+	 * @method
+	 * @asynchronous
+	 * @description ensures that a folder exists or creates it.
+	 * @parameter `node:String` - folder to be ensured.
+	 * @returns `Promise<String>` - the folder ensured.
+	 * @throws when the node is out of bounds.
+	 * @throws when the folder cannot be ensured.
+	 * 
+	 */
+	ensureFolder(node) {
+		return new Promise((ok, fail) => {
+			const filepath = this.getPath(node);
+			if(filepath instanceof Error) {
+				return fail(filepath);
+			}
+			return fs.ensureDir(filepath).then(ok).catch(fail);
+		});
+	}
+
+	/**
+	 * 
 	 * ### `Store#rename(oldNode:String, newNode:String):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
-	 * @description @TODO
-	 * @parameter @TODO
-	 * @returns @TODO
-	 * @throws @TODO
+	 * @description renames or moves a node.
+	 * @parameter `oldNode:String` - node source.
+	 * @parameter `newNode:String` - node destination.
+	 * @returns `Promise<nodeDestination:String>` - node destination.
+	 * @throws when node cannot be renamed.
+	 * @throws when a node is out of bounds.
 	 * 
 	 */
 	rename(oldNode, newNode) {
@@ -418,10 +475,11 @@ class Store {
 	 * 
 	 * @method
 	 * @asynchronous
-	 * @description @TODO
-	 * @parameter @TODO
-	 * @returns @TODO
-	 * @throws @TODO
+	 * @description creates a node readable stream
+	 * @parameter `node:String` - node to create the stream from.
+	 * @returns `readable:Stream` - readable stream of the node.
+	 * @throws when node is out of bounds.
+	 * @throws when stream cannot be created.
 	 * 
 	 */
 	createReadStream(node) {
@@ -438,10 +496,11 @@ class Store {
 	 * 
 	 * @method
 	 * @asynchronous
-	 * @description @TODO
-	 * @parameter @TODO
-	 * @returns @TODO
-	 * @throws @TODO
+	 * @description creates a node writable stream
+	 * @parameter `node:String` - node to create the stream from.
+	 * @returns `writable:Stream` - writable stream of the node.
+	 * @throws when node is out of bounds.
+	 * @throws when stream cannot be created.
 	 * 
 	 */
 	createWriteStream(node) {
@@ -460,7 +519,7 @@ class Store {
 	 * @asynchronous
 	 * @description creates multiple files with one operation.
 	 * @parameter `nodes:Object<String>` - map `{ <filename>:<filecontents> }` of files to create.
-	 * @returns `Promise<Array<String>>` - the list of files created.
+	 * @returns `Promise`
 	 * @throws when a node is out of bounds.
 	 * @throws when some file cannot be created.
 	 * 
@@ -486,7 +545,7 @@ class Store {
 	 * @asynchronous
 	 * @description deletes multiple files with one operation.
 	 * @parameter `nodes:Array<String>` - list of files to delete.
-	 * @returns `Promise<Array<String>>` - the list of files deleted.
+	 * @returns `Promise`
 	 * @throws when a node is out of bounds.
 	 * @throws when some file cannot be deleted.
 	 * 
@@ -507,7 +566,7 @@ class Store {
 	 * @asynchronous
 	 * @description creates multiple folders with one operation.
 	 * @parameter `nodes:Array<String>` - list of folders to create.
-	 * @returns `Promise<Array<String>>` - the list of folders created.
+	 * @returns `Promise`
 	 * @throws when a node is out of bounds.
 	 * @throws when some folder cannot be created.
 	 * 
@@ -526,7 +585,7 @@ class Store {
 	 * @asynchronous
 	 * @description deletes multiple folders with one operation.
 	 * @parameter `nodes:Array<String>` - list of folders to delete.
-	 * @returns `Promise<Array<String>>` - the list of folders deleted.
+	 * @returns `Promise`
 	 * @throws when a node is out of bounds.
 	 * @throws when some folder cannot be deleted.
 	 * 
@@ -535,29 +594,6 @@ class Store {
 		return Promise.all(
 			[].concat(nodes).map(node => this.deleteFolder(node))
 		);
-	}
-
-	/**
-	 * 
-	 * ### `Store#ensureFile(node:String):Promise<String>`
-	 * 
-	 * @method
-	 * @asynchronous
-	 * @description ensures that a file exists or creates it.
-	 * @parameter `node:String` - file to be ensured.
-	 * @returns `Promise<String>` - the file ensured.
-	 * @throws when the node is out of bounds.
-	 * @throws when the file cannot be ensured.
-	 * 
-	 */
-	ensureFile(node) {
-		return new Promise((ok, fail) => {
-			const filepath = this.getPath(node);
-			if(filepath instanceof Error) {
-				return fail(filepath);
-			}
-			return fs.ensureFile(filepath).then(ok).catch(fail);
-		});
 	}
 
 	/**
@@ -577,29 +613,6 @@ class Store {
 		return Promise.all(
 			[].concat(nodes).map(node => this.ensureFile(node))
 		);
-	}
-
-	/**
-	 * 
-	 * ### `Store#ensureFolder(node:String):Promise<String>`
-	 * 
-	 * @method
-	 * @asynchronous
-	 * @description ensures that a folder exists or creates it.
-	 * @parameter `node:String` - folder to be ensured.
-	 * @returns `Promise<String>` - the folder ensured.
-	 * @throws when the node is out of bounds.
-	 * @throws when the folder cannot be ensured.
-	 * 
-	 */
-	ensureFolder(node) {
-		return new Promise((ok, fail) => {
-			const filepath = this.getPath(node);
-			if(filepath instanceof Error) {
-				return fail(filepath);
-			}
-			return fs.ensureDir(filepath).then(ok).catch(fail);
-		});
 	}
 	/**
 	 * 
@@ -640,7 +653,7 @@ class Store {
 				return fail(filepath);
 			}
 			return rimraf(filepath, {glob: false, ...options}, function() {
-				return ok(filepath);
+				return ok(filepath.replace(this.basedir, ""));
 			})
 		});
 	}

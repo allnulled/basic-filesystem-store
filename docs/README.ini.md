@@ -10,11 +10,30 @@ Basic filesystem store interface and implementation.
 
 To have a universal (promise-based) interface to interact with the filesystem.
 
-To have a universal secure interface to interact with the filesystem.
-
-    - all the files and folders manipulated from one store must be files and folders that live inside the store's base directory (`store.basedir`).
+To have a universal safe interface to interact with the filesystem.
 
 ## Overview
+
+### Goal
+
+The API is aimed to support the following features, and serve as a universal interface
+based in promises to interact with a filesystem-like data exchanger:
+
+  - operate under safe nodes (specially when `"/"` and `".."` come into play)
+  - initialize stores
+  - create paths
+  - create streams
+  - create folders and files
+  - ensure folders and files
+  - read folders and files
+  - write folders and files
+  - update folders and files
+  - delete folders and files
+  - rename folders and files
+  - check the existence folders and files
+  - find folders and files by patterns
+
+### Current state
 
 The current API supports this set of methods:
 

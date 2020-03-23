@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "nodemon -w 'src/*.js' -w 'test/*.test.js' -x 'npm run test'",
-    "docs": "javadoc -i src/*.js -o docs/README.api.md -f markdown && concat docs/README.ini.md docs/README.api.md docs/README.end.md -o README.md",
+    "docs": "javadoc -i src/*.js -o docs/README.api.md -f markdown && concat docs/README.ini.md docs/README.end.md -o README.md",
     "upload": "npm run docs && git add . && git commit && git push",
     "test": "mocha --bail test/*.test.js --sort"
   },

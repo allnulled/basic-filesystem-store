@@ -232,6 +232,9 @@
 **Method**.
 
 
+**Asynchronous**.
+
+
 **Description**:  reads a folder and returns its contents (files and folders).
 
 
@@ -254,6 +257,9 @@
 
 
 **Method**.
+
+
+**Asynchronous**.
 
 
 **Description**:  writes contents to a file based in some options.
@@ -289,16 +295,22 @@
 **Asynchronous**.
 
 
-**Description**:  
+**Description**:  creates a folder.
 
 
-**Parameter**:  @TODO
+**Parameter**:  `node:String` - node to create as folder.
 
 
-**Returns**:  @TODO
+ `options:Object` - options of the creation.
 
 
-**Throws**:  @TODO
+**Returns**:  `filepath:String` - node created.
+
+
+**Throws**:  when node is out of bounds.
+
+
+ when folder cannot be created.
 
 
 
@@ -313,16 +325,28 @@
 **Asynchronous**.
 
 
-**Description**:  @TODO
+**Description**:  if a file exists (1), it updates its content. Otherwise, it fails.
 
 
-**Parameter**:  @TODO
+**Parameter**:  `node:String` - node to be updated.
 
 
-**Returns**:  @TODO
+ `contents:String|Buffer` - contents to write.
 
 
-**Throws**:  @TODO
+ `options:String|Object` - options of the writing.
+
+
+**Returns**:  `Promise`
+
+
+**Throws**:  when node is not a file.
+
+
+ when node is out of bounds.
+
+
+ when file cannot be written.
 
 
 
@@ -337,16 +361,19 @@
 **Asynchronous**.
 
 
-**Description**:  @TODO
+**Description**:  deletes a node as file.
 
 
-**Parameter**:  @TODO
+**Parameter**:  `node:String` - node to be deleted as file.
 
 
-**Returns**:  @TODO
+**Returns**:  `filepath:String` - node deleted.
 
 
-**Throws**:  @TODO
+**Throws**:  when the node is out of bounds.
+
+
+ when the file cannot be deleted.
 
 
 
@@ -371,186 +398,6 @@
 
 
 **Throws**:  @TODO
-
-
-
-
-### `Store#rename(oldNode:String, newNode:String):Promise<String>`
-
-
-
-**Method**.
-
-
-**Asynchronous**.
-
-
-**Description**:  @TODO
-
-
-**Parameter**:  @TODO
-
-
-**Returns**:  @TODO
-
-
-**Throws**:  @TODO
-
-
-
-
-### `Store#createReadStream(node:String):ReadStream`
-
-
-
-**Method**.
-
-
-**Asynchronous**.
-
-
-**Description**:  @TODO
-
-
-**Parameter**:  @TODO
-
-
-**Returns**:  @TODO
-
-
-**Throws**:  @TODO
-
-
-
-
-### `Store#createWriteStream(node:String):WriteStream`
-
-
-
-**Method**.
-
-
-**Asynchronous**.
-
-
-**Description**:  @TODO
-
-
-**Parameter**:  @TODO
-
-
-**Returns**:  @TODO
-
-
-**Throws**:  @TODO
-
-
-
-
-### `Store#writeFiles(nodes:Object<String>):Promise<Array<String>>`
-
-
-
-**Method**.
-
-
-**Asynchronous**.
-
-
-**Description**:  creates multiple files with one operation.
-
-
-**Parameter**:  `nodes:Object<String>` - map `{ <filename>:<filecontents> }` of files to create.
-
-
-**Returns**:  `Promise<Array<String>>` - the list of files created.
-
-
-**Throws**:  when a node is out of bounds.
-
-
- when some file cannot be created.
-
-
-
-
-### `Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>`
-
-
-
-**Method**.
-
-
-**Asynchronous**.
-
-
-**Description**:  deletes multiple files with one operation.
-
-
-**Parameter**:  `nodes:Array<String>` - list of files to delete.
-
-
-**Returns**:  `Promise<Array<String>>` - the list of files deleted.
-
-
-**Throws**:  when a node is out of bounds.
-
-
- when some file cannot be deleted.
-
-
-
-
-### `Store#createFolders(nodes:Array<String>):Promise<Array<String>>`
-
-
-
-**Method**.
-
-
-**Asynchronous**.
-
-
-**Description**:  creates multiple folders with one operation.
-
-
-**Parameter**:  `nodes:Array<String>` - list of folders to create.
-
-
-**Returns**:  `Promise<Array<String>>` - the list of folders created.
-
-
-**Throws**:  when a node is out of bounds.
-
-
- when some folder cannot be created.
-
-
-
-
-### `Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>`
-
-
-
-**Method**.
-
-
-**Asynchronous**.
-
-
-**Description**:  deletes multiple folders with one operation.
-
-
-**Parameter**:  `nodes:Array<String>` - list of folders to delete.
-
-
-**Returns**:  `Promise<Array<String>>` - the list of folders deleted.
-
-
-**Throws**:  when a node is out of bounds.
-
-
- when some folder cannot be deleted.
 
 
 
@@ -582,33 +429,6 @@
 
 
 
-### `Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>`
-
-
-
-**Method**.
-
-
-**Asynchronous**.
-
-
-**Description**:  ensures that some files exist or creates them.
-
-
-**Parameter**:  `node:Array<String>` - files to be ensured.
-
-
-**Returns**:  `Promise<Array<String>>` - the files ensured.
-
-
-**Throws**:  when a node is out of bounds.
-
-
- when the files cannot be ensured.
-
-
-
-
 ### `Store#ensureFolder(node:String):Promise<String>`
 
 
@@ -632,6 +452,225 @@
 
 
  when the folder cannot be ensured.
+
+
+
+
+### `Store#rename(oldNode:String, newNode:String):Promise<String>`
+
+
+
+**Method**.
+
+
+**Asynchronous**.
+
+
+**Description**:  renames or moves a node.
+
+
+**Parameter**:  `oldNode:String` - node source.
+
+
+ `newNode:String` - node destination.
+
+
+**Returns**:  `Promise<nodeDestination:String>` - node destination.
+
+
+**Throws**:  when node cannot be renamed.
+
+
+ when a node is out of bounds.
+
+
+
+
+### `Store#createReadStream(node:String):ReadStream`
+
+
+
+**Method**.
+
+
+**Asynchronous**.
+
+
+**Description**:  creates a node readable stream
+
+
+**Parameter**:  `node:String` - node to create the stream from.
+
+
+**Returns**:  `readable:Stream` - readable stream of the node.
+
+
+**Throws**:  when node is out of bounds.
+
+
+ when stream cannot be created.
+
+
+
+
+### `Store#createWriteStream(node:String):WriteStream`
+
+
+
+**Method**.
+
+
+**Asynchronous**.
+
+
+**Description**:  creates a node writable stream
+
+
+**Parameter**:  `node:String` - node to create the stream from.
+
+
+**Returns**:  `writable:Stream` - writable stream of the node.
+
+
+**Throws**:  when node is out of bounds.
+
+
+ when stream cannot be created.
+
+
+
+
+### `Store#writeFiles(nodes:Object<String>):Promise<Array<String>>`
+
+
+
+**Method**.
+
+
+**Asynchronous**.
+
+
+**Description**:  creates multiple files with one operation.
+
+
+**Parameter**:  `nodes:Object<String>` - map `{ <filename>:<filecontents> }` of files to create.
+
+
+**Returns**:  `Promise`
+
+
+**Throws**:  when a node is out of bounds.
+
+
+ when some file cannot be created.
+
+
+
+
+### `Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>`
+
+
+
+**Method**.
+
+
+**Asynchronous**.
+
+
+**Description**:  deletes multiple files with one operation.
+
+
+**Parameter**:  `nodes:Array<String>` - list of files to delete.
+
+
+**Returns**:  `Promise`
+
+
+**Throws**:  when a node is out of bounds.
+
+
+ when some file cannot be deleted.
+
+
+
+
+### `Store#createFolders(nodes:Array<String>):Promise<Array<String>>`
+
+
+
+**Method**.
+
+
+**Asynchronous**.
+
+
+**Description**:  creates multiple folders with one operation.
+
+
+**Parameter**:  `nodes:Array<String>` - list of folders to create.
+
+
+**Returns**:  `Promise`
+
+
+**Throws**:  when a node is out of bounds.
+
+
+ when some folder cannot be created.
+
+
+
+
+### `Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>`
+
+
+
+**Method**.
+
+
+**Asynchronous**.
+
+
+**Description**:  deletes multiple folders with one operation.
+
+
+**Parameter**:  `nodes:Array<String>` - list of folders to delete.
+
+
+**Returns**:  `Promise`
+
+
+**Throws**:  when a node is out of bounds.
+
+
+ when some folder cannot be deleted.
+
+
+
+
+### `Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>`
+
+
+
+**Method**.
+
+
+**Asynchronous**.
+
+
+**Description**:  ensures that some files exist or creates them.
+
+
+**Parameter**:  `node:Array<String>` - files to be ensured.
+
+
+**Returns**:  `Promise<Array<String>>` - the files ensured.
+
+
+**Throws**:  when a node is out of bounds.
+
+
+ when the files cannot be ensured.
 
 
 
