@@ -128,6 +128,20 @@ The current API supports this set of methods:
 
 ----
 
+### Store.ORIGINAL_INTERFACE
+
+
+
+**Static Property**.
+
+
+**Description**:  best class to inherit from if you want to develop your own store.
+
+
+
+
+----
+
 ### Store#initialize():Promise
 
 

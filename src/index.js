@@ -5,7 +5,7 @@ const path = require("path");
 const _debug = require("debug");
 const debug = _debug("filesystem-store");
 
-class Store {
+class StoreInterface {
 
 	/**
 	 * 
@@ -54,6 +54,102 @@ class Store {
 	 */
 	constructor(options = {}) {
 		Object.assign(this, this.constructor.DEFAULT_OPTIONS, options);
+	}
+	initialize() {
+		throw new Error("MethodNotSupportedError");
+	}
+	getPath() {
+		throw new Error("MethodNotSupportedError");
+	}
+	describe() {
+		throw new Error("MethodNotSupportedError");
+	}
+	has() {
+		throw new Error("MethodNotSupportedError");
+	}
+	hasFile() {
+		throw new Error("MethodNotSupportedError");
+	}
+	hasFolder() {
+		throw new Error("MethodNotSupportedError");
+	}
+	readFile() {
+		throw new Error("MethodNotSupportedError");
+	}
+	readFolder() {
+		throw new Error("MethodNotSupportedError");
+	}
+	writeFile() {
+		throw new Error("MethodNotSupportedError");
+	}
+	createFolder() {
+		throw new Error("MethodNotSupportedError");
+	}
+	updateFile() {
+		throw new Error("MethodNotSupportedError");
+	}
+	deleteFile() {
+		throw new Error("MethodNotSupportedError");
+	}
+	deleteFolder() {
+		throw new Error("MethodNotSupportedError");
+	}
+	ensureFile() {
+		throw new Error("MethodNotSupportedError");
+	}
+	ensureFolder() {
+		throw new Error("MethodNotSupportedError");
+	}
+	rename() {
+		throw new Error("MethodNotSupportedError");
+	}
+	createReadStream() {
+		throw new Error("MethodNotSupportedError");
+	}
+	createWriteStream() {
+		throw new Error("MethodNotSupportedError");
+	}
+	writeFiles() {
+		throw new Error("MethodNotSupportedError");
+	}
+	deleteFiles() {
+		throw new Error("MethodNotSupportedError");
+	}
+	createFolders() {
+		throw new Error("MethodNotSupportedError");
+	}
+	deleteFolders() {
+		throw new Error("MethodNotSupportedError");
+	}
+	ensureFiles() {
+		throw new Error("MethodNotSupportedError");
+	}
+	ensureFolders() {
+		throw new Error("MethodNotSupportedError");
+	}
+	deleteRecursively() {
+		throw new Error("MethodNotSupportedError");
+	}
+	findPatterns() {
+		throw new Error("MethodNotSupportedError");
+	}
+
+}
+
+class Store extends StoreInterface {
+
+	/**
+	 * 
+	 * ----
+	 * 
+	 * ### Store.ORIGINAL_INTERFACE
+	 * 
+	 * @static-property
+	 * @description best class to inherit from if you want to develop your own store.
+	 * 
+	 */
+	static get ORIGINAL_INTERFACE() {
+		return StoreInterface;
 	}
 
 	/**
