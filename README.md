@@ -73,7 +73,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store.create(...args):Store*
+### `Store.create(...args):Store`
 
 
 
@@ -90,7 +90,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store.DEFAULT_OPTIONS:Object*
+### `Store.DEFAULT_OPTIONS:Object`
 
 
 
@@ -108,7 +108,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store.constructor(options={}:Object):Store*
+### `Store.constructor(options={}:Object):Store`
 
 
 
@@ -131,7 +131,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store.ORIGINAL_INTERFACE*
+### `Store.ORIGINAL_INTERFACE`
 
 
 
@@ -145,7 +145,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#initialize():Promise*
+### `Store#initialize():Promise`
 
 
 
@@ -174,7 +174,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#getPath(node:String):String*
+### `Store#getPath(node:String):String`
 
 
 
@@ -206,7 +206,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#describe(node:String):Promise<Object>*
+### `Store#describe(node:String):Promise<Object>`
 
 
 
@@ -241,7 +241,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#has(node:String):Promise<Boolean>*
+### `Store#has(node:String):Promise<Boolean>`
 
 
 
@@ -273,7 +273,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#hasFile(node:String):Promise<Boolean>*
+### `Store#hasFile(node:String):Promise<Boolean>`
 
 
 
@@ -305,7 +305,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#hasFolder(node:String):Promise<Boolean>*
+### `Store#hasFolder(node:String):Promise<Boolean>`
 
 
 
@@ -337,7 +337,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#readFile(node:String, options="utf8":String|Object):Promise<String>*
+### `Store#readFile(node:String, options="utf8":String|Object):Promise<String>`
 
 
 
@@ -375,7 +375,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#readFolder(node:String):Promise<String>*
+### `Store#readFolder(node:String):Promise<String>`
 
 
 
@@ -410,7 +410,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>*
+### `Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>`
 
 
 
@@ -451,7 +451,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#createFolder(node:String, options={}:String|Object):Promise<String>*
+### `Store#createFolder(node:String, options={}:String|Object):Promise<String>`
 
 
 
@@ -489,7 +489,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>*
+### `Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>`
 
 
 
@@ -533,7 +533,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#deleteFile(node:String):Promise<String>*
+### `Store#deleteFile(node:String):Promise<String>`
 
 
 
@@ -568,7 +568,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#deleteFolder(node:String, options={}:String|Object):Promise<String>*
+### `Store#deleteFolder(node:String, options={}:String|Object):Promise<String>`
 
 
 
@@ -606,7 +606,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#ensureFile(node:String):Promise<String>*
+### `Store#ensureFile(node:String):Promise<String>`
 
 
 
@@ -641,7 +641,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#ensureFolder(node:String):Promise<String>*
+### `Store#ensureFolder(node:String):Promise<String>`
 
 
 
@@ -676,7 +676,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#rename(oldNode:String, newNode:String):Promise<String>*
+### `Store#rename(oldNode:String, newNode:String):Promise<String>`
 
 
 
@@ -714,7 +714,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#createReadStream(node:String):ReadStream*
+### `Store#createReadStream(node:String):ReadStream`
 
 
 
@@ -749,7 +749,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#createWriteStream(node:String):WriteStream*
+### `Store#createWriteStream(node:String):WriteStream`
 
 
 
@@ -784,7 +784,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#writeFiles(nodes:Object<String>):Promise<Array<String>>*
+### `Store#writeFiles(nodes:Object<String>):Promise<Array<String>>`
 
 
 
@@ -819,7 +819,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>*
+### `Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>`
 
 
 
@@ -854,7 +854,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#createFolders(nodes:Array<String>):Promise<Array<String>>*
+### `Store#createFolders(nodes:Array<String>):Promise<Array<String>>`
 
 
 
@@ -889,7 +889,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>*
+### `Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>`
 
 
 
@@ -924,7 +924,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>*
+### `Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>`
 
 
 
@@ -959,7 +959,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#ensureFolders(nodes:Array<String>):Promise<Array<String>>*
+### `Store#ensureFolders(nodes:Array<String>):Promise<Array<String>>`
 
 
 
@@ -994,7 +994,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#deleteRecursively(node:String):Promise<String>*
+### `Store#deleteRecursively(node:String):Promise<String>`
 
 
 
@@ -1029,7 +1029,7 @@ The current API supports this set of methods:
 
 ----
 
-### *Store#findPatterns(patterns:String|Array<String>):Promise<Array<String>>*
+### `Store#findPatterns(patterns:String|Array<String>):Promise<Array<String>>`
 
 
 

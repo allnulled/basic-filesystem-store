@@ -11,7 +11,7 @@ class StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store.create(...args):Store*
+	 * ### `Store.create(...args):Store`
 	 * 
 	 * @static-method
 	 * @synchronous
@@ -26,7 +26,7 @@ class StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store.DEFAULT_OPTIONS:Object*
+	 * ### `Store.DEFAULT_OPTIONS:Object`
 	 * 
 	 * @static-property
 	 * @description default values of options. Any property here can be overwritten from the constructor's options.
@@ -44,7 +44,7 @@ class StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store.constructor(options={}:Object):Store*
+	 * ### `Store.constructor(options={}:Object):Store`
 	 * 
 	 * @constructor
 	 * @description method that generates a new store.
@@ -143,7 +143,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store.ORIGINAL_INTERFACE*
+	 * ### `Store.ORIGINAL_INTERFACE`
 	 * 
 	 * @static-property
 	 * @description best class to inherit from if you want to develop your own store.
@@ -157,7 +157,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#initialize():Promise*
+	 * ### `Store#initialize():Promise`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -182,7 +182,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#getPath(node:String):String*
+	 * ### `Store#getPath(node:String):String`
 	 * 
 	 * @method
 	 * @synchronous
@@ -206,7 +206,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#describe(node:String):Promise<Object>*
+	 * ### `Store#describe(node:String):Promise<Object>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -235,7 +235,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#has(node:String):Promise<Boolean>*
+	 * ### `Store#has(node:String):Promise<Boolean>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -263,7 +263,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#hasFile(node:String):Promise<Boolean>*
+	 * ### `Store#hasFile(node:String):Promise<Boolean>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -294,7 +294,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#hasFolder(node:String):Promise<Boolean>*
+	 * ### `Store#hasFolder(node:String):Promise<Boolean>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -325,7 +325,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#readFile(node:String, options="utf8":String|Object):Promise<String>*
+	 * ### `Store#readFile(node:String, options="utf8":String|Object):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -358,7 +358,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#readFolder(node:String):Promise<String>*
+	 * ### `Store#readFolder(node:String):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -390,7 +390,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>*
+	 * ### `Store#writeFile(node:String, contents:String|Buffer, options="utf8":String|Object):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -424,7 +424,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#createFolder(node:String, options={}:String|Object):Promise<String>*
+	 * ### `Store#createFolder(node:String, options={}:String|Object):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -457,7 +457,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>*
+	 * ### `Store#updateFile(node:String, contents:String, options="utf8":String|Object):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -485,7 +485,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#deleteFile(node:String):Promise<String>*
+	 * ### `Store#deleteFile(node:String):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -517,7 +517,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#deleteFolder(node:String, options={}:String|Object):Promise<String>*
+	 * ### `Store#deleteFolder(node:String, options={}:String|Object):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -550,7 +550,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#ensureFile(node:String):Promise<String>*
+	 * ### `Store#ensureFile(node:String):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -577,7 +577,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#ensureFolder(node:String):Promise<String>*
+	 * ### `Store#ensureFolder(node:String):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -604,7 +604,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#rename(oldNode:String, newNode:String):Promise<String>*
+	 * ### `Store#rename(oldNode:String, newNode:String):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -641,7 +641,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#createReadStream(node:String):ReadStream*
+	 * ### `Store#createReadStream(node:String):ReadStream`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -666,7 +666,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#createWriteStream(node:String):WriteStream*
+	 * ### `Store#createWriteStream(node:String):WriteStream`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -691,7 +691,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#writeFiles(nodes:Object<String>):Promise<Array<String>>*
+	 * ### `Store#writeFiles(nodes:Object<String>):Promise<Array<String>>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -721,7 +721,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>*
+	 * ### `Store#deleteFiles(nodes:Array<String>):Promise<Array<String>>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -746,7 +746,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#createFolders(nodes:Array<String>):Promise<Array<String>>*
+	 * ### `Store#createFolders(nodes:Array<String>):Promise<Array<String>>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -769,7 +769,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>*
+	 * ### `Store#deleteFolders(nodes:Array<String>):Promise<Array<String>>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -792,7 +792,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>*
+	 * ### `Store#ensureFiles(nodes:Array<String>):Promise<Array<String>>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -814,7 +814,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#ensureFolders(nodes:Array<String>):Promise<Array<String>>*
+	 * ### `Store#ensureFolders(nodes:Array<String>):Promise<Array<String>>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -837,7 +837,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#deleteRecursively(node:String):Promise<String>*
+	 * ### `Store#deleteRecursively(node:String):Promise<String>`
 	 * 
 	 * @method
 	 * @asynchronous
@@ -866,7 +866,7 @@ class Store extends StoreInterface {
 	 * 
 	 * ----
 	 * 
-	 * ### *Store#findPatterns(patterns:String|Array<String>):Promise<Array<String>>*
+	 * ### `Store#findPatterns(patterns:String|Array<String>):Promise<Array<String>>`
 	 * 
 	 * @method
 	 * @asynchronous
