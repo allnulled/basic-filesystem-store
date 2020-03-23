@@ -199,7 +199,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;stats:Object&gt;` a [stats](https://nodejs.org/api/fs.html#fs_class_fs_stats) object of the node.
 
 
-**Throws**:   - when no node is found.
+**Throws**: 
+
+
+  - when no node is found.
 
 
   - when node is out of bounds.
@@ -300,7 +303,10 @@ The current API supports this set of methods:
 **Description**:  reads a file and returns its contents.
 
 
-**Parameter**:   - `node:String` - node to be read as file.
+**Parameter**: 
+
+
+  - `node:String` - node to be read as file.
 
 
   - `options:Object` - options of the file reading.
@@ -309,7 +315,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;contents:String&gt;` - the contents of the file.
 
 
-**Throws**:   - when node is out of bounds.
+**Throws**: 
+
+
+  - when node is out of bounds.
 
 
   - when file cannot be read.
@@ -338,7 +347,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;nodes:Array&lt;String&gt;&gth;` - nodes inside the folder.
 
 
-**Throws**:   - when node is out of bounds.
+**Throws**: 
+
+
+  - when node is out of bounds.
 
 
   - when folder cannot be read.
@@ -361,7 +373,10 @@ The current API supports this set of methods:
 **Description**:  writes contents to a file based in some options.
 
 
-**Parameter**:   - `node:String` - node to be written as file.
+**Parameter**: 
+
+
+  - `node:String` - node to be written as file.
 
 
   - `contents:String|Buffer` - contents to be written.
@@ -373,7 +388,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;filepath:String&gt;` - node overwritten.
 
 
-**Throws**:   - when node is out of bounds.
+**Throws**: 
+
+
+  - when node is out of bounds.
 
 
   - when file cannot be written.
@@ -396,7 +414,10 @@ The current API supports this set of methods:
 **Description**:  creates a folder.
 
 
-**Parameter**:   - `node:String` - node to create as folder.
+**Parameter**: 
+
+
+  - `node:String` - node to create as folder.
 
 
   - `options:Object` - options of the creation.
@@ -405,7 +426,10 @@ The current API supports this set of methods:
 **Returns**:  `filepath:String` - node created.
 
 
-**Throws**:   - when node is out of bounds.
+**Throws**: 
+
+
+  - when node is out of bounds.
 
 
   - when folder cannot be created.
@@ -428,7 +452,10 @@ The current API supports this set of methods:
 **Description**:  if a file exists (1), it updates its content. Otherwise, it fails.
 
 
-**Parameter**:   - `node:String` - node to be updated.
+**Parameter**: 
+
+
+  - `node:String` - node to be updated.
 
 
   - `contents:String|Buffer` - contents to write.
@@ -440,7 +467,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise`
 
 
-**Throws**:   - when node is not a file.
+**Throws**: 
+
+
+  - when node is not a file.
 
 
   - when node is out of bounds.
@@ -472,7 +502,10 @@ The current API supports this set of methods:
 **Returns**:  `filepath:String` - node deleted.
 
 
-**Throws**:   - when the node is out of bounds.
+**Throws**: 
+
+
+  - when the node is out of bounds.
 
 
   - when the file cannot be deleted.
@@ -495,7 +528,10 @@ The current API supports this set of methods:
 **Description**:  deletes a node as folder
 
 
-**Parameter**:   - `node:String` - node to delete as folder
+**Parameter**: 
+
+
+  - `node:String` - node to delete as folder
 
 
   - `options:Object` - options of the deletion
@@ -504,7 +540,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;folder:String&gt;` - folder to delete.
 
 
-**Throws**:   - when node is out of bounds.
+**Throws**: 
+
+
+  - when node is out of bounds.
 
 
   - when folder cannot be deleted.
@@ -533,7 +572,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;String&gt;` - the file ensured.
 
 
-**Throws**:   - when the node is out of bounds.
+**Throws**: 
+
+
+  - when the node is out of bounds.
 
 
   - when the file cannot be ensured.
@@ -562,7 +604,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;String&gt;` - the folder ensured.
 
 
-**Throws**:   - when the node is out of bounds.
+**Throws**: 
+
+
+  - when the node is out of bounds.
 
 
   - when the folder cannot be ensured.
@@ -585,7 +630,10 @@ The current API supports this set of methods:
 **Description**:  renames or moves a node.
 
 
-**Parameter**:   - `oldNode:String` - node source.
+**Parameter**: 
+
+
+  - `oldNode:String` - node source.
 
 
   - `newNode:String` - node destination.
@@ -594,7 +642,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;nodeDestination:String&gt;` - node destination.
 
 
-**Throws**:   - when node cannot be renamed.
+**Throws**: 
+
+
+  - when node cannot be renamed.
 
 
   - when a node is out of bounds.
@@ -623,7 +674,10 @@ The current API supports this set of methods:
 **Returns**:  `readable:Stream` - readable stream of the node.
 
 
-**Throws**:   - when node is out of bounds.
+**Throws**: 
+
+
+  - when node is out of bounds.
 
 
   - when stream cannot be created.
@@ -652,7 +706,10 @@ The current API supports this set of methods:
 **Returns**:  `writable:Stream` - writable stream of the node.
 
 
-**Throws**:   - when node is out of bounds.
+**Throws**: 
+
+
+  - when node is out of bounds.
 
 
   - when stream cannot be created.
@@ -681,7 +738,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise`
 
 
-**Throws**:   - when a node is out of bounds.
+**Throws**: 
+
+
+  - when a node is out of bounds.
 
 
   - when some file cannot be created.
@@ -710,7 +770,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise`
 
 
-**Throws**:   - when a node is out of bounds.
+**Throws**: 
+
+
+  - when a node is out of bounds.
 
 
   - when some file cannot be deleted.
@@ -739,7 +802,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise`
 
 
-**Throws**:   - when a node is out of bounds.
+**Throws**: 
+
+
+  - when a node is out of bounds.
 
 
   - when some folder cannot be created.
@@ -768,7 +834,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise`
 
 
-**Throws**:   - when a node is out of bounds.
+**Throws**: 
+
+
+  - when a node is out of bounds.
 
 
   - when some folder cannot be deleted.
@@ -797,7 +866,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;Array&lt;String&gt;&gth;` - the files ensured.
 
 
-**Throws**:   - when a node is out of bounds.
+**Throws**: 
+
+
+  - when a node is out of bounds.
 
 
   - when the files cannot be ensured.
@@ -826,7 +898,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;String&gt;` - the folders ensured.
 
 
-**Throws**:   - when a node is out of bounds.
+**Throws**: 
+
+
+  - when a node is out of bounds.
 
 
   - when the folders cannot be ensured.
@@ -855,7 +930,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;String&gt;` - the node to delete recursively.
 
 
-**Throws**:   - when the node is out of bounds.
+**Throws**: 
+
+
+  - when the node is out of bounds.
 
 
   - when the node cannot be deleted recursively.
@@ -884,7 +962,10 @@ The current API supports this set of methods:
 **Returns**:  `Promise&lt;Array&lt;String&gt;&gth;` - the nodes matched.
 
 
-**Throws**:   - when a node is out of bounds.
+**Throws**: 
+
+
+  - when a node is out of bounds.
 
 
   - when the search produces some error.
